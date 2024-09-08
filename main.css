@@ -1,0 +1,108 @@
+:root{
+   --PrimaryRed : #d6001c;
+
+   --DarkRed100 : #ab2328;
+   --DarkRed075 : #c35442;
+   --DarkRed050 : #d58570;
+   --DarkRed025 : #eabcad;
+
+   --DarkBlue100 : #00205b;
+   --DarkBlue075 : #2b517f;
+   --DarkBlue050 : #667ba2;
+   --DarkBlue025 : #a5b0cb;
+
+   --LightBlue100 : #7fa9ae;
+   --LightBlue075 : #94c0c6;
+   --LightBlue050 : #b3d3d5;
+   --LightBlue025 : #d4e6e8;
+
+   --DarkGray : #54585a;
+   --LightGray : #9ea2a2;
+}
+
+body{
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+}
+
+button {
+   padding: 10px 20px;
+   margin: 0px 25px;
+   font-size: 16px;
+   border: none;
+   border-radius: 5px;
+   background-color: var(--DarkRed100);
+   color: white;
+}
+
+button:hover{
+   cursor: pointer;
+   background-color: var(--DarkRed075);
+}
+ 
+#header{
+   display: flex;
+   align-items: center;
+   width: calc(100vw - 17px);
+   height: 100px;
+   background-color: #ffffff50;
+   box-shadow: 0 3px 10px 0;
+   z-index: 10;
+}
+
+#header-buttons{
+   display: flex;
+   flex-grow: 1;
+   justify-content: flex-end;
+   align-items: center;
+   height: 100%;
+   margin-right: 40px;
+}
+
+.profile-container {
+   position: relative; 
+   display: inline; 
+   cursor: pointer;
+ } 
+
+.profileIcon {
+   width: 38px;
+   height: 38px;
+   margin: 10px 25px;
+   border-radius: 50%;
+   padding-top: 5px;
+   cursor: pointer;
+}
+
+.profile-container:hover .dropdown-menu{
+   display: block;
+}
+
+.logo{
+   width: 205px;  
+   height: 80px; 
+   margin: 10px 10px 10px 50px;
+   cursor: pointer;
+}
+
+.dropdown-menu {
+   display: none; 
+   position: absolute; 
+   right: -11px; 
+   background-color: white; 
+   border: 1px solid #ccc; 
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+   z-index: 1; 
+}
+ 
+.dropdown-menu a {
+   display: block; 
+   padding: 10px; 
+   color: var(--DarkRed100); 
+   text-decoration: none; 
+   width: 90px;
+}
+ 
+.dropdown-menu a:hover {
+   background-color: #f0f0f0; 
+}
