@@ -33,6 +33,7 @@ if (userIsSignedIn) {
 } else {
    const signInButton = document.createElement('button');
    signInButton.textContent = 'Sign In';
+   signInButton.className = 'headerbutton';
 
    signInButton.addEventListener('click', function() {
       window.location.href = '../login/login.html'; 
