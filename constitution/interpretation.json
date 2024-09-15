@@ -36,6 +36,221 @@
                     "interpretation": ""
                 }
             ]
+        },
+        {
+          "amendmentNumber": 13,
+          "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "This amendment abolishes slavery. Ratified on December 6, 1865, it prevented slaves from being owned and did does not allow punishment without proper convinction."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Congress is allowed to enforce this through the correct legislation."
+                }
+          ]
+        },
+        {
+            "amendmentNumber": 14,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "If you are born in the United States then you will automatically become a US citizen. As a US citizen every state is allows you free access to enter, work and own property."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Every state will be given a number of represenatives based on their population. Any citizen of that state that is 21 years or older is allowed to vote and if they are prevented from doing so, their represenatives will start being taken away. This allows open voting in every state."
+                },
+                {
+                    "sectionNumber": 3,
+                    "interpretation": "Someone is not able to run for any part of the US government if they have previous attempted to start a rebellion or overthrow the government. This is designed to protect the US government. However, is 2/3 of the house agrees, then an exception for an individual can be made."
+                },
+                {
+                    "sectionNumber": 4,
+                    "interpretation": "The US government is only responsible for paying the debts which it has agreed to or support the end of a rebellion. It is not resposnible for paying off any debts to rebels or previous slave owners who had lost slaves due to the 13th amendment."
+                },
+                {
+                    "sectionNumber": 5,
+                    "interpretation": "Congress is allowed to enforce all above provisions through appropriate legislation."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 15,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Nobody is allowed to deny the right to vote based on race, color, or prior status of slavery."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Congress is allowed to enforce all above provisions through appropriate legislation."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 16,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Congress has the power to impose and collect taxes from any income, regardless of where it came from. This does not have to depend on a states population count or other similar factors."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 17,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Every state elects two senators through a vote by the people. These senators have 6 year terms and each have one vote. If a senate seat becomes vacant then the state can have a special election and the governor has the power to temporarily appoint someone in their place. Finally, they added for transition that it does not affect anyone currently in office."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 18,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "After a year of ratification, all sale and transporation of alcohol would be prohibited and subject to new relegations. The congress has the power to enforce this. Finally, when submitting it they added that this article wouldn't be operative unless it was ratified within seven years. It was ratified in one year, so it went into affect."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 19,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Nobody can deny another individual the right to vote based on their sex."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 20,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "The President and Vice President's terms end at noon on January 20th of the appropriate year. The Senators and Representative's terms end at noon on Junary 3rd."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Congress will meet at least once per year on Junary 3rd, unless another day is appointed."
+                },
+                {
+                    "sectionNumber": 3,
+                    "interpretation": "If the US president is not able to begin after the time that he is said to start, then the Vice President would take his place. If he is not able to start before the time agreed on, then the Vice President will take the President's role until a new one can be elected. If neither the President or Vice President are able to begin then congress will appoint someone until a candidate can be elected."
+                },
+                {
+                    "sectionNumber": 4,
+                    "interpretation": "Congress has the ability to create new laws to choose a President or Vice President based on unexpected circumstances. "
+                },
+                {
+                    "sectionNumber": 5,
+                    "interpretation": "Section 1 and 2 came into effect on October 15, 1933 as it was ratified on January 23, 1933."
+                },
+                {
+                    "sectionNumber": 5,
+                    "interpretation": "The article has to be ratified by 3/4 of the states and within 7 years. It took only 13 months to ratify, so it came into affect."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 21,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Repeals the 18th amendment (prohibition of alcohol)"
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Gave states the control over the transportation and distribution of alcohol. Previously it has been under federal control."
+                },
+                {
+                    "sectionNumber": 3,
+                    "interpretation": "The article has to be ratified within 7 years and 3/4 of the states. It took less than 10 months to be ratified."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 22,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "A person can not be president for more than two terms. If someone had served for over 2 years of someone else's election, then they can only be president once more. This rule does not apply to the president at the time of ratification (Harry S. Truman)."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "The article has to be ratified within 7 years and 3/4 of the states. It took less than 3 years and 11 months to be ratified."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 23,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Washington DC is allowed to have electors to vote for the President and Vice President. The number of these represenatives is based on state population but never more than the lowest population state. Washington DC will follow the same rules outlined in the 12 amendment."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Congress is allowed to enforce this through the correct legislation."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 24,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "Citizens are allowed to vote even if they did not pay poll tax or any other kind of tax."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Congress is allowed to enforce this through the correct legislation."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 25,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "If the current president is removed from office, resigns or dies, then the Vice President takes their place."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "If the Vice President role is vacant, then the president nominates someone and they have to be approved by the majority of houses of congress. "
+                },
+                {
+                    "sectionNumber": 3,
+                    "interpretation": "If the President sends a written message stating they cannot perform their duties, then the Vice President is in charge until the President sends another message stating they are able to perform the job again."
+                },
+                {
+                    "sectionNumber": 4,
+                    "interpretation": "If the Vice President and the majority of the President's top officers send a letter stating that the president cannot perform his job, then the Vice President is in charge. After, if the President sends a letter stating that they are able to return to duty, then are in charge unless the Vice President and the majority of top officers send another letter within 4 days saying otherwise. If the second letter from the Vice President comes, then the senate has to meet within 48 hours and decide within 21 days. If two-thirds of both the House and Senate agree that the President is unable to serve, the Vice President continues as Acting President. If not, the President resumes their duties. "
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 26,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "If a US citizen is 18 years or older, then their right to vote cannot be denied."
+                },
+                {
+                    "sectionNumber": 2,
+                    "interpretation": "Congress is allowed to enforce this through the correct legislation."
+                }
+            ]
+        },
+        {
+            "amendmentNumber": 27,
+            "sections": [
+                {
+                    "sectionNumber": 1,
+                    "interpretation": "If Congress passes a law that changes the pay for Senators and Representatives, the change can't take effect until after the next election."
+                }
+            ]
         }
     ]
 }
