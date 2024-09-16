@@ -1,0 +1,1 @@
+For this Lab, I worked on the interpretations for articles 1-4. I looked at the wesbsite given to us for the text and also for help with interpreting the text. (https://constitution.congress.gov/constitution/) Then I took the analyis that I did and formatted it into a JSON file.
