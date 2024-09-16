@@ -47,12 +47,17 @@ hr{
    margin: 5px 0 10px 30px;
 }
 
+#dropdown:hover {
+   cursor: pointer;
+}
+
 #expandArrow{
    font-size: 80px;
    vertical-align: center;
 }
 
 #historyContent{
+   display:none;
    margin: 0 30px 10px 30px;
 }
 

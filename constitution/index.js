@@ -13,3 +13,9 @@ function getInfo(type, article, section) {
       }
    });
 }
+
+$(document).ready(function () {
+   $("#dropdown").click(function () {
+      $("#historyContent").toggle(1000);
+   });
+});
