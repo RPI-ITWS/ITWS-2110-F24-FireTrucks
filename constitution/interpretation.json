@@ -1,6 +1,15 @@
 {
     "articles": [
       {
+        "articlesNumber": 0,
+        "sections": [
+          {
+            "sectionNumber": 1,
+            "interpretation": "We, the people of the United States, create and approve this Constitution to build a stronger, united country, ensure fairness, maintain peace within the nation, protect it from external threats, support the well-being of everyone, and protect freedom for ourselves and future generations."
+          }
+        ]
+      },
+      {
         "articleNumber": 1,
         "sections": [
           {
