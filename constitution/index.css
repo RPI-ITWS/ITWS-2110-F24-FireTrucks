@@ -75,7 +75,7 @@ hr{
 }
 
 #documentContent{
-   height: 78%;
+   height: 75%;
    overflow: auto;
 }
 
@@ -109,13 +109,12 @@ hr{
    margin-top: 0;
 }
 
-#articleNav{
-   display: flex;
-   align-items: center;
-}
-
 #jumpTo{
    margin-left: 10px;
+}
+
+#amendmentsNav{
+   margin: -40px 0 0 76px;
 }
 
 #interpretation{
@@ -163,4 +162,9 @@ hr{
 .articleContent:hover{
    background-color: var(--WarmBorwn);
    cursor: pointer;
+}
+
+.articleNav{
+   display: flex;
+   align-items: center;
 }
