@@ -1,0 +1,13 @@
+9/21 Meeting
+
+We met and filled out our KanBan with the tasks for the project, as well as what each member will do for the current sprint, ending October 1st. We agreed to prioritize creating the frontend of the pages and setting up the database.
+
+Mikah: Work on homepage, goods page, services page, auction page, and giveaway. These are all very similar because they will just contain all the listings.
+
+Shivani: Work on the creating listing page. JavaScript will be added in the next sprint
+
+Satyam: Continue working on the database to get it set up
+
+Robert: Work on the login frontend. If completed early, will take on another page frontend.
+
+Tim: Work on the viewed auction page.
