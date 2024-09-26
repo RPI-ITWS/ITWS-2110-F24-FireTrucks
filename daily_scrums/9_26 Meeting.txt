@@ -1,0 +1,12 @@
+9/26 Meeting
+
+Robert: I started mockups of the login page, plan to implement the frontend during the upcoming weekend.
+
+Tim: Created the template for the info page for a specific item.
+
+Mikah: Started working on the goods page, has everything he needs for a rough start. Displays listings, a search bar and button. Checkboxes for the filters.
+
+Shivani: Started HTML for the create listing page, plans to finish the HTML and CSS in the next few days.
+
+Satyam: Working on the database and getting it set up for the VM. There has been some issues, will work with the TA on Friday 9/27 to get it working.
+
