@@ -2,6 +2,10 @@ body{
    color: var(--DarkGray);
 }
 
+.input-group{
+   border: 1px black solid;
+}
+
 .listingSection{
    width: 1300px;
    margin: 0 auto;

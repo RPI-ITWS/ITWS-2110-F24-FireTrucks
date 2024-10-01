@@ -1,0 +1,137 @@
+body{
+   color: var(--DarkGray);
+}
+
+#search{
+   display: flex;
+   vertical-align: center;
+   justify-content: center;
+}
+
+#search input[type=text] {
+   border: 2px solid lightgray;
+   transition: border-color 0.3s ease;
+   border-radius: 18px;
+   margin: 20px 20px 0 -5px;
+   padding-left: 10px;
+   width: 1200px;
+   height: 30px;
+   font-size: 17px;
+}
+
+#search input[type=text]:focus {
+   border: 2px solid var(--DarkRed100);
+   outline: none;
+}
+
+#searchButton{
+   border: none;
+   margin-top: 23px;
+   background-color: var(--DarkRed100);
+   width: 34px;
+   height: 34px;
+   border-radius: 20px;
+}
+
+#searchButton:hover{
+   cursor: pointer;
+}
+
+#sidebar{
+   width: 300px;
+   height: 500px;
+   margin: 12px 20px 0 20px;
+   align-items: top;
+   background-color: var(--DarkRed100);
+   display: inline-block;
+}
+
+#sidebarContent{
+   margin-left: 20px;
+   color: white;
+}
+
+#sidebar input{
+   width: 15px;
+   height: 15px;
+}
+
+#sidebar label{
+   display: inline-block;
+   cursor: pointer;
+   width: 250px;
+   margin-bottom: 20px;;
+}
+
+.listingSection{
+   width: 1320px;
+   margin: 20px auto 0 auto;
+   display: flex;
+}
+
+#listings{
+   width: 970px;
+}
+
+.fa-search{
+   color: white;
+}
+
+.listing{
+   display: inline-block;
+   width: 300px;
+   border-color: rgb(188, 188, 188);
+   border-radius: 15px;
+   box-shadow: 0 0 5px 0 rgb(188, 188, 188);
+   margin: 10px 10px 20px 10px;
+}
+
+.listing:hover{
+   animation: fade-shadow 0.25s forwards;
+}
+
+.listingText{
+   margin: 0 10px 0 10px;
+   height: 105px;
+}
+
+.listingImg{
+   width: 100%;
+   border-radius: 15px 15px 0 0;
+}
+
+.listingTitle{
+   margin-top: 10px;
+   margin-bottom: 5px;
+}
+
+.listingDescription{
+   margin-top: 0;
+}
+
+.price{
+   width: 61px;
+   margin: 4px 0 0 0;
+   display: inline-block;
+}
+
+.CTAbutton{
+   display: inline;
+   background-color: var(--DarkRed100);
+   color: white;
+   font-size: 14px;
+   height: 28px;
+   float: right;
+   border: none;
+   border-radius: 5px;
+}
+
+.CTAbutton:hover{
+   cursor: pointer;
+   background-color: var(--DarkRed050);
+}
+
+@keyframes fade-shadow {
+   0% {box-shadow: 0 0 5px 0 rgb(125, 125, 125);}
+   100% {box-shadow: 0 0 10px 0 rgb(125, 125, 125);}
+}
