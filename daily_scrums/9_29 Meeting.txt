@@ -1,0 +1,13 @@
+This was a shorter meeting, as most members had completed most of their tasks for the current sprint.
+
+9/29 Meeting
+
+Robert: Finished the HTML for the login page, will do CSS following day.
+
+Tim: Finished his part for the sprint.
+
+Mikah: Finished his part for the sprint.
+
+Shivani: Finished the HTML, just needs to finish the CSS.
+
+Satyam: Having trouble finishing the database, may need to keep working on setting it up in the following sprint.
