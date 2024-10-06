@@ -1,0 +1,13 @@
+10-2 Meeting
+
+This meeting we went over what we completed for the sprint, but our meeting with the TA will be on Sunday.
+
+Robert: Finished the login page HTML and CSS.
+
+Tim: Finished the item info page HTML and CSS.
+
+Mikah: Finished the goods and services page.
+
+Satyam: Finished setting up the database, creating tables in preparation for our project.
+
+Shivani: Finished the HTML and CSS for the create listing page.
