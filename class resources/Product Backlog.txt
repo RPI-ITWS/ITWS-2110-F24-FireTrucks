@@ -1,0 +1,29 @@
+Home
+Goods
+Services
+Giveaways
+Auctions
+Login
+View Listing
+    Goods / Service
+    Giveaway
+    Auction
+Create Listing
+Profile Page 
+    My Listings
+    Create Listing
+    Favorites / Bookmark
+    Current Auctions / Bids
+
+TASKS FOR EACH:
+Front End
+Back End
+JS
+
+OTHER TASKS
+Set up database and PHP
+Set up cross page linking / header
+
+API:
+Google Maps API (Map location meet up)
+Or Elasticsearch API (Filtering API)
