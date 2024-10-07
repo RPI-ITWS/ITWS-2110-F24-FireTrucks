@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <Title>Login Page</Title>
    <link rel="stylesheet" href="../main.css">
+   <link rel="stylesheet" href="login.css">
 
 </head>
 
@@ -22,4 +23,19 @@
       </div>
       <script src="../main.js"></script>
    </div>
+   <!-- Login -->
+   <div class="login-container">
+      <h2>RPI Login</h2>
+      <form action="/login" method="POST">
+          <div class="input-group">
+              <label for="email">RPI Email</label>
+              <input type="email" id="email" name="email" placeholder="your_email@rpi.edu" required>
+          </div>
+          <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter Password" required>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+      </form>
+  </div>
 </body>
