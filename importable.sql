@@ -8,19 +8,24 @@ CREATE TABLE `listingData` (
    PRIMARY KEY (`ListingId`)
 );
 
-CREATE TABLE `auctionsData` (
-   `AuctionId` smallint unsigned NOT NULL AUTO_INCREMENT,
-   `Name` varchar(100) NOT NULL,
-   `Seller` varchar(100) NOT NULL,
-   `TopBid` float NOT NULL,
-   `TopName` varchar(100) NOT NULL,
-   `TopPhoneNumber` varchar(100) NOT NULL,
-   `NextBid` float NOT NULL,
-   `NextName` varchar(100) NOT NULL,
-   `NextPhoneNumber` varchar(100) NOT NULL,
-   `TimePosted` datetime NOT NULL,
-   `TimeEnd` datetime NOT NULL,
-   PRIMARY KEY (`AuctionId`)
+CREATE TABLE auctionsData (
+   `id` INT AUTO_INCREMENT PRIMARY KEY,
+   `title` VARCHAR(255) NOT NULL,
+   `description` TEXT NOT NULL,
+   `image_url` VARCHAR(255) NOT NULL,
+   `starting_bid` DECIMAL(10, 2) NOT NULL,
+   `time_posted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   `time_end` DATETIME NOT NULL
+);
+
+CREATE TABLE bidsData (
+   `id` INT AUTO_INCREMENT PRIMARY KEY,
+   `auction_id` INT NOT NULL,
+   `bidder_name` VARCHAR(255),
+   `bid_amount` DECIMAL(10, 2) NOT NULL,
+   `bid_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   `anonymous` BOOLEAN DEFAULT 0,
+   FOREIGN KEY (auction_id) REFERENCES auctionsData(id)
 );
 
 CREATE TABLE `loginData` (
