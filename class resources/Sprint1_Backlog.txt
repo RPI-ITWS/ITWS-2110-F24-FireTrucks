@@ -1,0 +1,17 @@
+Sprint 1 Backlog:
+
+Overall, the sprint focus is to create the frontend for most of the pages as well as set up the database so that
+in sprint 2, we can begin working on backend implementation.
+
+Satyam:
+Set up the database, creating tables in preperation for items from listings to be inserted. This task is expected to be completed
+by 10/1.
+
+Tim:
+Create the frontend for the view listing page, specifically for auctions. The task should be completed by 10/1.
+
+Robert: Create the frontend for the login page. The task should be completed by 10/1.
+
+Shivani: Create the frontend for the create listing page, designing the features of a listing. The task should be completed by 10/1.
+
+Mikah: Create the frontend for the goods page, services page, and giveaways page. The task should be completed by 10/1.
