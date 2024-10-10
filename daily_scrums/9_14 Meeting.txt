@@ -1,0 +1,7 @@
+9_14 Meeting
+
+We decided that we will prioritize frontend development and database setup first so that in future sprints,
+everyone can work on functionality without requiring database or frontend first.
+
+We were discussing implementing a chat feature for buyers and sellers to communicate. We heard about an API which we could use,
+but after looking into it, we realized the work required is beyond the scope of the class.
