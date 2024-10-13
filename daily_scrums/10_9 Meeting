@@ -1,0 +1,16 @@
+10_9 Meeting
+
+This meeting we are creating a sprint backlog for sprint 2. We are trying to decide how to split up the work, leaning towards an approach where everyone works on the backend of a page that is already completed for frontend so work isn't slowed.
+
+Robert: First create the login functionality, then work on giveaways with Tim after
+
+Tim: Work on the backend for auction functionality. Then, work on giveaways with Robert after.
+
+Shivani: Create listing frontend and backend - Complete functionality
+
+Mikah: Create the backend for the listing pages. This involves taking data from the database and inserting into individual listings.
+
+Satyam: Create the frontend and backend for the profile page.
+
+Everyone will do more tasks as the sprint progresses.
+
