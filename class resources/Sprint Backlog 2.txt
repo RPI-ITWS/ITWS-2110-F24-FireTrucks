@@ -1,0 +1,13 @@
+Overall, the sprint focus is to finish functionality for sprint 2.
+
+Satyam: Profiles frontend and backend
+
+Tim: Auctions page frontend and backend, view listings backend, homepage view 5 most recent auctions
+
+Robert: Login frontend and backend, giveaways backend, homepage view 5 recent giveaways
+
+Shivani: Create listing frontend and backend, view listings frontend
+
+Mikah: Goods and services backend, homepage view 5 recent goods/services listings
+
+All tasks to be done by end of the sprint

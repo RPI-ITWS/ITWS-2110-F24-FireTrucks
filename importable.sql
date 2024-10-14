@@ -3,10 +3,12 @@ CREATE TABLE `listingData` (
    `Name` varchar(100) NOT NULL,
    `Seller` varchar(100) NOT NULL,
    `Price` float NOT NULL,
+   `Description` varchar(300) NOT NULL,
    `PhoneNumber` varchar(100) NOT NULL,
    `Email` varchar(100) NOT NULL,
    PRIMARY KEY (`ListingId`)
 );
+
 
 CREATE TABLE auctionsData (
    `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -42,6 +44,7 @@ CREATE TABLE `servicesData` (
     `ServiceId` smallint unsigned NOT NULL AUTO_INCREMENT,
     `Name` varchar(100) NOT NULL,
     `Seller` varchar(100) NOT NULL,
+    `Price` float NOT NULL,
     `Description` varchar(300) NOT NULL,
     `PhoneNumber` varchar(100) NOT NULL,
     `Email` varchar(100) NOT NULL,
@@ -52,9 +55,10 @@ CREATE TABLE `giveawayData` (
     `GiveawayId` smallint unsigned NOT NULL AUTO_INCREMENT,
     `Name` varchar(100) NOT NULL,
     `Seller` varchar(100) NOT NULL,
+    `Description` varchar(300) NOT NULL,
     `TimePosted` datetime NOT NULL,
     `TimeEnd` datetime NOT NULL,
     `Entries` JSON NOT NULL,
-    PRIMARY KEY (`ServiceId`)
+    PRIMARY KEY (`GiveawayId`)
 );
 
