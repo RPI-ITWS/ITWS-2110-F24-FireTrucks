@@ -1,0 +1,10 @@
+Mikah: started working on backend of goods, figuring out XAMPP
+
+Satyam: started working on profile backend
+
+Tim: XAMPP figured out, worked on auctions specific page
+
+Robert: working on finishing login
+
+Shivani: worked on backend for create listings
+
