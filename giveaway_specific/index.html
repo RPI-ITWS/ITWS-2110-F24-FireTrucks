@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Single Giveaway</Title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="./giveaway_specific.css">
+    <script src="./js/giveaway_specific.js" defer></script>
+</head>
+
+<body>
+   <!-- Website Header -->
+   <div id="header">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
+      <div id="header-buttons">
+         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/goods.html'">Goods Page</button>
+         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/services.html'">Services Page</button>
+         <div id="login-button">
+               <!-- Button will be created here -->
+         </div>
+      </div>
+   </div>
+
+   <div id="giveaway-container">
+      <div id="error-message" style="display: none;">
+         <p>Error fetching giveaway.</p>
+      </div>
+
+      <div id="current-item" style="display: none;">
+         <h1>Giveaway</h1>
+         <div class="image">
+            <img id="giveawayImage" alt="An Image here">
+         </div>
+         <h3 id="itemTitle">Item title</h3>
+         <p id="itemDescription" class="description">Description</p>
+
+         <div class="seller">
+            <p>Seller: </p>
+            <p class="seller-name">Joe</p>
+         </div>
+
+         <div class="time-left">
+            <p>Time Left</p>
+            <p class="time">1d 1h 1m</p>
+         </div>
+      </div>
+
+      <div class="enter-giveaway" style="display: none;"> 
+         <h2>Enter the Giveaway!</h2>
+         <p id="numberEntrants">Number of entrants: </p>
+         <form action="">
+            <button type="submit">Enter</button>
+         </form>
+      </div>
+   </div>
+</body>
+
+</html>

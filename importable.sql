@@ -52,13 +52,22 @@ CREATE TABLE `servicesData` (
 );
 
 CREATE TABLE `giveawayData` (
-    `GiveawayId` smallint unsigned NOT NULL AUTO_INCREMENT,
-    `Name` varchar(100) NOT NULL,
-    `Seller` varchar(100) NOT NULL,
-    `Description` varchar(300) NOT NULL,
-    `TimePosted` datetime NOT NULL,
-    `TimeEnd` datetime NOT NULL,
-    `Entries` JSON NOT NULL,
-    PRIMARY KEY (`GiveawayId`)
+    `giveaway_id` smallint unsigned NOT NULL AUTO_INCREMENT,
+    `name` varchar(100) NOT NULL,
+    `image_url` VARCHAR(255) NOT NULL,
+    `seller` varchar(100) NOT NULL,
+    `description` varchar(300) NOT NULL,
+    `time_posted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `time_end` DATETIME NOT NULL,
+    PRIMARY KEY (`giveaway_id`)
 );
+
+CREATE TABLE giveawayEntreesData (
+   `id` INT AUTO_INCREMENT PRIMARY KEY,
+   `giveaway_id` SMALLINT UNSIGNED NOT NULL,
+   `name` VARCHAR(255),
+   `entree_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   FOREIGN KEY (giveaway_id) REFERENCES giveawayData(giveaway_id)
+);
+
 
