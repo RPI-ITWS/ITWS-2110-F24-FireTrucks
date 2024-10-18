@@ -1,0 +1,15 @@
+10-17 Meeting
+
+Today we discussed what progress we have made so far on the tasks we assigned ourselves.
+
+Robert: Completed the backend for the login. The user can now create an account and log into it.
+At the moment this has no effect on the rest of the website. Planning to use an API for email verification. For the future,
+will work on this API as well as making the login look a little better.
+
+Satyam: Continued to work on the profile page.
+
+Tim: Finished the auction page backend, so it is functional now.
+
+Mikah: Started working on the goods and services backends. We discussed how searching and filtering would work.
+
+Shivani: Worked on the PHP for the listing form.
