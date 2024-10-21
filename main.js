@@ -36,7 +36,7 @@ if (userIsSignedIn) {
    signInButton.className = 'headerbutton';
 
    signInButton.addEventListener('click', function() {
-      window.location.href = '../login/login.html'; 
+      window.location.href = './login/login.php'; 
    });
 
    loginButtonContainer.appendChild(signInButton);
