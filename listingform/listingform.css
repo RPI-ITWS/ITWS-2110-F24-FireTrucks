@@ -1,0 +1,73 @@
+.box {
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    margin: 220px;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 8px;
+}
+h1 {
+    color: #ab2328;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+p {
+    color: #ab2328;
+    text-align: center;
+    margin-top: 0px;
+}
+
+h2 {
+    margin: 15px;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contactInfo {
+    color: black;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+#phoneNum {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#email {
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+label {
+    display: inline-block;
+    margin: 5px;
+}
+
+#auction {
+    margin-bottom: 1px;
+}
+
+#giveaway {
+    margin-bottom: 1px;
+}
+
+#good {
+    margin-bottom: 1px;
+}
+
+#service {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
