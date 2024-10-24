@@ -1,17 +1,20 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     // Database connection settings
     $servername = "localhost";
     $username = "phpmyadmin";  // Default XAMPP username
     $password = "Marketplace18";      // Default XAMPP password (usually empty)
     $dbname = "marketplace";    // Replace with your database name, or use 'test'
     // Create connection
-    @ $db = new mysqli($servername, $username, $password, $dbname, $port);
+    $db = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
     } 
-     
+   
     $formType = $_POST['formType'];
 
    if ($formType == 'auction') {
@@ -33,7 +36,7 @@
                 <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
                 <Title>Success!</Title>
                     <script> setTimeout(function() {
-                        window.location.href = '/index.html';}, 2000);
+                        window.location.href = '../index.html';}, 2000);
                     </script>
                 </head>
                 <body>
@@ -63,7 +66,7 @@
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
             <Title>Success!</Title>
                 <script> setTimeout(function() {
-                    window.location.href = '/index.html';}, 2000);
+                    window.location.href = '../index.html';}, 2000);
                 </script>
             </head>
             <body>
@@ -93,7 +96,7 @@
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
             <Title>Success!</Title>
                 <script> setTimeout(function() {
-                    window.location.href = '/index.html';}, 2000);
+                    window.location.href = '../index.html';}, 2000);
                 </script>
             </head>
             <body>
@@ -105,7 +108,7 @@
             echo "Error" . $statement->error;
         }
         $statement->close();
-    } elseif ($formType == 'good') {
+    } elseif ($formType == 'service') {
         $title = $_POST['title'];
         $category = $_POST['category'];
         $description = $_POST['description'];
@@ -115,7 +118,7 @@
         $phoneNum = $_POST['phoneNum'];
         $imageUrl = $_POST['image'];
 
-        $insQuery = "INSERT INTO servicesData (Name, category, Description, Price, Seller, Email, PhoneNumber, image_url) VALUES(?,?,?,?,?,?,?,?)";
+        $insQuery = "INSERT INTO servicesData (`Name`, `category`, `Description`, `Price`, `Seller`, `Email`, `PhoneNumber`, `image_url`) VALUES(?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
         $statement->bind_param("sssdssss",$title, $category, $description, $price, $seller, $email, $phoneNum, $imageUrl);
         if($statement->execute()) {
@@ -123,7 +126,7 @@
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
             <Title>Success!</Title>
                 <script> setTimeout(function() {
-                    window.location.href = '/index.html';}, 2000);
+                    window.location.href = '../index.html';}, 2000);
                 </script>
             </head>
             <body>
