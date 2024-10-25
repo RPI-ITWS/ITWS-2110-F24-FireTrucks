@@ -29,7 +29,7 @@
         $phoneNum = $_POST['phoneNum'];
         $imageUrl = $_POST['image'];
 
-        $insQuery = "INSERT INTO auctionsData (`title`, `category`, `description`, `starting_bid`, `time_end`, `host name`, `email`, `phone`, `image_url`) VALUES(?,?,?,?,?,?,?,?,?)";
+        $insQuery = "INSERT INTO auctionsData (`title`, `category`, `description`, `starting_bid`, `time_end`, `host_name`, `email`, `phone`, `image_url`) VALUES(?,?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
         $statement->bind_param("sssdsssss",$title, $categoriesString, $description, $startbid, $auctionEnd, $hostName, $email, $phoneNum, $imageUrl);
         if($statement->execute()) {
