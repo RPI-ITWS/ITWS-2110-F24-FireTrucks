@@ -6,19 +6,19 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <Title>Listing Form</Title>
    <link rel="stylesheet" href="listingform.css">
-   <link rel="stylesheet" href="/main.css">
+   <link rel="stylesheet" href="../main.css">
 </head>
 
 <body>
     <div id="header">
-        <img src="/images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='./index.html'">
+        <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
         <div id="header-buttons">
-           <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='goods/goods.html'">Goods Page</button>
-           <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='services/services.html'">Services Page</button>
+           <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/goods.html'">Goods Page</button>
+           <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/services.html'">Services Page</button>
            <div id="login-button">
            </div>
         </div>
-        <script src="/main.js"></script>
+        <script src="../main.js"></script>
      </div>
     <!--Initial form to choose type of listing-->
     <div class="box">
@@ -47,25 +47,23 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Item for Auction" id="title" name="title" required><br>
             <label for="category">Category</label><br>
-                <select name="category" id="category">
-                    <option value="textbooks">Textbooks</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothes">Clothes</option>
-                    <option value="vehicles">Vehicles</option>
-                    <option value="furniture">Furniture</option>
-                    <option value="games">Games</option>
-                    <option value="appliances">Appliances</option>
-                    <option value="sportsEquip">Sports Equipment</option>
-                    <option value="jewelry">Jewelry</option>
-                    <option value="art">Art</option>
-                    <option value="instruments">Instruments</option>
-                    <option value="antiques">Antiques</option>
-                    <option value="collectibles">Collectibles</option>
-                    <option value="tickets">Tickets</option>
-                    <option value="toys">Toys</option>
-                    <option value="tools">Tools</option>
-                    <option value="other">Miscellaneous</option>
-                </select><br>
+                    <input type="checkbox" name="category[]" value="textbooks">Textbooks<br>
+                    <input type="checkbox" name="category[]" value="electronics">Electronics<br>
+                    <input type="checkbox" name="category[]" value="clothes">Clothes<br>
+                    <input type="checkbox" name="category[]" value="vehicles">Vehicles<br>
+                    <input type="checkbox" name="category[]" value="furniture">Furniture<br>
+                    <input type="checkbox" name="category[]" value="games">Games<br>
+                    <input type="checkbox" name="category[]" value="appliances">Appliances<br>
+                    <input type="checkbox" name="category[]" value="sportsEquip">Sports Equipment<br>
+                    <input type="checkbox" name="category[]" value="jewelry">Jewelry<br>
+                    <input type="checkbox" name="category[]" value="art">Art<br>
+                    <input type="checkbox" name="category[]" value="instruments">Instruments<br>
+                    <input type="checkbox" name="category[]" value="antiques">Antiques<br>
+                    <input type="checkbox" name="category[]" value="collectibles">Collectibles<br>
+                    <input type="checkbox" name="category[]" value="tickets">Tickets<br>
+                    <input type="checkbox" name="category[]" value="toys">Toys<br>
+                    <input type="checkbox" name="category[]" value="tools">Tools<br>
+                    <input type="checkbox" name="category[]" value="other">Miscellaneous<br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
             <label for="startbid">Starting Bid</label><br>
@@ -80,7 +78,7 @@
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <label for="image">Image URl</label><br>
-            <input type="varchar" id="image" name="image" size="120" required><br>
+            <input type="varchar" id="image" name="image" size="100" required><br>
             <input type="checkbox" id="agreement" name="agreement" required>
             <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label><br>
             <button type="submit" id="post">Post Auction</button>
@@ -96,25 +94,23 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Giveaway Item" id="title" name="title"><br>
             <label for="category">Category</label><br>
-                <select name="category" id="category">
-                        <option value="textbooks">Textbooks</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="clothes">Clothes</option>
-                        <option value="vehicles">Vehicles</option>
-                        <option value="furniture">Furniture</option>
-                        <option value="games">Games</option>
-                        <option value="appliances">Appliances</option>
-                        <option value="sportsEquip">Sports Equipment</option>
-                        <option value="jewelry">Jewelry</option>
-                        <option value="art">Art</option>
-                        <option value="instruments">Instruments</option>
-                        <option value="antiques">Antiques</option>
-                        <option value="collectibles">Collectibles</option>
-                        <option value="tickets">Tickets</option>
-                        <option value="toys">Toys</option>
-                        <option value="tools">Tools</option>
-                        <option value="other">Miscellaneous</option>
-                </select><br>
+                    <input type="checkbox" name="category[]" value="textbooks">Textbooks<br>
+                    <input type="checkbox" name="category[]" value="electronics">Electronics<br>
+                    <input type="checkbox" name="category[]" value="clothes">Clothes<br>
+                    <input type="checkbox" name="category[]" value="vehicles">Vehicles<br>
+                    <input type="checkbox" name="category[]" value="furniture">Furniture<br>
+                    <input type="checkbox" name="category[]" value="games">Games<br>
+                    <input type="checkbox" name="category[]" value="appliances">Appliances<br>
+                    <input type="checkbox" name="category[]" value="sportsEquip">Sports Equipment<br>
+                    <input type="checkbox" name="category[]" value="jewelry">Jewelry<br>
+                    <input type="checkbox" name="category[]" value="art">Art<br>
+                    <input type="checkbox" name="category[]" value="instruments">Instruments<br>
+                    <input type="checkbox" name="category[]" value="antiques">Antiques<br>
+                    <input type="checkbox" name="category[]" value="collectibles">Collectibles<br>
+                    <input type="checkbox" name="category[]" value="tickets">Tickets<br>
+                    <input type="checkbox" name="category[]" value="toys">Toys<br>
+                    <input type="checkbox" name="category[]" value="tools">Tools<br>
+                    <input type="checkbox" name="category[]" value="other">Miscellaneous<br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your giveaway" id="description" name="description" rows="4" cols="60"></textarea><br>
             <label for="hostName">Giveaway Host</label><br>
@@ -127,7 +123,7 @@
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <label for="image">Image URl</label><br>
-            <input type="varchar" id="image" name="image" size="120" required><br>
+            <input type="varchar" id="image" name="image" size="100" required><br>
             <input type="checkbox" id="agreement" name="agreement" required>
             <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label><br>
             <button type="submit" id="post">Post Giveaway</button>
@@ -143,25 +139,24 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Item for Sale" id="title" name="title"><br>
             <label for="category">Category</label><br>
-                <select name="category" id="category">
-                        <option value="textbooks">Textbooks</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="clothes">Clothes</option>
-                        <option value="vehicles">Vehicles</option>
-                        <option value="furniture">Furniture</option>
-                        <option value="games">Games</option>
-                        <option value="appliances">Appliances</option>
-                        <option value="sportsEquip">Sports Equipment</option>
-                        <option value="jewelry">Jewelry</option>
-                        <option value="art">Art</option>
-                        <option value="instruments">Instruments</option>
-                        <option value="antiques">Antiques</option>
-                        <option value="collectibles">Collectibles</option>
-                        <option value="tickets">Tickets</option>
-                        <option value="toys">Toys</option>
-                        <option value="tools">Tools</option>
-                        <option value="other">Miscellaneous</option>
-                </select><br>
+            <label for="category">Category</label><br>
+                <input type="checkbox" name="category[]" value="textbooks">Textbooks<br>
+                <input type="checkbox" name="category[]" value="electronics">Electronics<br>
+                <input type="checkbox" name="category[]" value="clothes">Clothes<br>
+                <input type="checkbox" name="category[]" value="vehicles">Vehicles<br>
+                <input type="checkbox" name="category[]" value="furniture">Furniture<br>
+                <input type="checkbox" name="category[]" value="games">Games<br>
+                <input type="checkbox" name="category[]" value="appliances">Appliances<br>
+                <input type="checkbox" name="category[]" value="sportsEquip">Sports Equipment<br>
+                <input type="checkbox" name="category[]" value="jewelry">Jewelry<br>
+                <input type="checkbox" name="category[]" value="art">Art<br>
+                <input type="checkbox" name="category[]" value="instruments">Instruments<br>
+                <input type="checkbox" name="category[]" value="antiques">Antiques<br>
+                <input type="checkbox" name="category[]" value="collectibles">Collectibles<br>
+                <input type="checkbox" name="category[]" value="tickets">Tickets<br>
+                <input type="checkbox" name="category[]" value="toys">Toys<br>
+                <input type="checkbox" name="category[]" value="tools">Tools<br>
+                <input type="checkbox" name="category[]" value="other">Miscellaneous<br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
             <label for="price">Price</label><br>
@@ -174,7 +169,7 @@
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <label for="image">Image URl</label><br>
-            <input type="varchar" id="image" name="image" size="120" required><br>
+            <input type="varchar" id="image" name="image" size="100" required><br>
             <input type="checkbox" id="agreement" name="agreement" required>
             <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label><br>
             <button type="submit" id="post">Post Listing</button>
@@ -190,17 +185,16 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Service Name" id="title" name="title"><br>
             <label for="category">Category</label><br>
-                <select name="category" id="category">
-                        <option value="tutoring">Tutoring</option>
-                        <option value="editing">Writing Help & Editing</option>
-                        <option value="techsupport">Tech Support</option>
-                        <option value="photography">Photography or Videography</option>
-                        <option value="moving">Moving Assistance</option>
-                        <option value="cleaning">Cleaning Services</option>
-                        <option value="pets">Pet Services</option>
-                        <option value="transportation">Transportation Services</option>
-                        <option value="other">Miscellaneous</option>
-                </select><br>
+                <select name="category[]" id="category" multiple>
+                        <input type="checkbox" name="category[]" value="tutoring">Tutoring<br>
+                        <input type="checkbox" name="category[]" value="editing">Writing Help & Editing<br>
+                        <input type="checkbox" name="category[]" value="techsupport">Tech Support<br>
+                        <input type="checkbox" name="category[]" value="photography">Photography or Videography<br>
+                        <input type="checkbox" name="category[]" value="moving">Moving Assistance<br>
+                        <input type="checkbox" name="category[]" value="cleaning">Cleaning Services<br>
+                        <input type="checkbox" name="category[]" value="pets">Pet Services<br>
+                        <input type="checkbox" name="category[]" value="transportation">Transportation Services<br>
+                        <input type="checkbox" name="category[]" value="miscellaneous">Miscellaneous<br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
             <label for="price">Price</label><br>
@@ -213,7 +207,7 @@
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <label for="image">Image URl</label><br>
-            <input type="varchar" id="image" name="image" size="120">
+            <input type="varchar" id="image" name="image" size="100">
             <input type="checkbox" id="agreement" name="agreement" required>
             <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label><br>
             <button type="submit" id="post">Post Service</button>

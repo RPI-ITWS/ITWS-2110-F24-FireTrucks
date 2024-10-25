@@ -1,0 +1,13 @@
+10-17 Meeting
+
+Today we discussed what progress we have made so far on the tasks we assigned ourselves.
+
+Robert: Researched how to verify emails.
+
+Satyam: Continued to work on the profile page, having trouble with the database.
+
+Tim: Worked and finished on the specific giveaways page.
+
+Mikah: Still working on the goods and services backends, having trouble with PHP.
+
+Shivani: Kept working on the PHP for the listing form.
