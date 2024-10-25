@@ -15,7 +15,7 @@ if (userIsSignedIn) {
    dropdownMenu.className = 'dropdown-menu';
 
    const profileLink = document.createElement('a');
-   profileLink.href = '../profile/profile.html';
+   profileLink.href = '../profile/profile.php';
    profileLink.textContent = 'Profile';
 
    const listingsLink = document.createElement('a');
