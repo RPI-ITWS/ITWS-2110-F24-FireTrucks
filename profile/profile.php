@@ -47,7 +47,16 @@ $stmtAuctions->execute();
 $auctions = $stmtAuctions->get_result();
 
 // Fetch giveaways for the user
-$sqlGiveaways = "SELECT * FROM giveawayData WHERE giveaway_id = (SELECT giveaway_id AS gid FROM giveawayEntreesData WHERE Name = (SELECT Name AS n FROM users WHERE UserId = ?)";
+$sqlGiveaways = "
+    SELECT gd.* 
+    FROM giveawayData gd
+    INNER JOIN giveawayEntreesData ge ON gd.giveaway_id = ge.giveaway_id
+    WHERE ge.Name = (
+        SELECT Name 
+        FROM users 
+        WHERE UserId = ?
+    )a
+";
 $stmtGiveaways = $conn->prepare($sqlGiveaways);
 $stmtGiveaways->bind_param("i", $userId);
 $stmtGiveaways->execute();
