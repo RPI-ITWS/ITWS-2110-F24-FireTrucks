@@ -108,6 +108,7 @@
       <div id="header-buttons">
          <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/goods.html'">Goods Page</button>
          <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/services.html'">Services Page</button>
+         <button class="headerbutton" alt="Create Listing" onclick="window.location.href='../listingform/index.html'">Create Listing</button>
          <div id="login-button">
             <!-- Button will be created here -->
          </div>
