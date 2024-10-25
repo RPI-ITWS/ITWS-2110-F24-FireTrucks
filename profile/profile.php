@@ -55,8 +55,7 @@ $sqlGiveaways = "
         SELECT Name 
         FROM users 
         WHERE UserId = ?
-    )a
-";
+    )";
 $stmtGiveaways = $conn->prepare($sqlGiveaways);
 $stmtGiveaways->bind_param("i", $userId);
 $stmtGiveaways->execute();
