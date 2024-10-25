@@ -103,7 +103,7 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
          button.classList.add("CTAbutton");
          button.textContent = "Buy Now";
          button.onclick = function() {
-            const baseUrl = "http://localhost/Firetrucks/auction_specific/index.html"; // Replace with your desired URL
+            const baseUrl = "https://firetrucks.eastus.cloudapp.azure.com/ITWS-2110-F24-FireTrucks/auction_specific/index.html"; // Replace with your desired URL
             const id = item.ListingId; // Set the desired ID
             const url = `${baseUrl}?id=${id}`; // Construct the URL with the query parameter
             window.location.href = url; // Redirect the user to the constructed URL
@@ -127,7 +127,7 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
 
 function getSelectedCategories() {
    // List of all available categories
-   const allCategories = ["furniture", "appliances", "vehicles", "electronics", "lamps", "textbooks"];
+   const allCategories = ["Textbooks", "Electronics", "Clothes", "Vehicles", "Furniture", "Games", "Appliances", "Sports Equipment", "Jewelry", "Art", "Instruments", "Antiques", "Collectibles", "Tickets", "Toys", "Tools", "Miscellaneous"];
    
    // Get checkboxes
    const checkboxes = document.querySelectorAll("#categories input[type='checkbox']");
