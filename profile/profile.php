@@ -40,7 +40,7 @@ $stmtListings->execute();
 $listings = $stmtListings->get_result();
 
 // Fetch auctions for the user
-$sqlAuctions = "SELECT * FROM auctionData WHERE Name = (SELECT Name AS n FROM users WHERE UserId = ?)";
+$sqlAuctions = "SELECT * FROM auctionsData WHERE Name = (SELECT Name AS n FROM users WHERE UserId = ?)";
 $stmtAuctions = $conn->prepare($sqlAuctions);
 $stmtAuctions->bind_param("i", $userId);
 $stmtAuctions->execute();
