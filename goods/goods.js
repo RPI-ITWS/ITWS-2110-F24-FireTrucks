@@ -30,7 +30,7 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
    data.forEach(item => {
       // Loop through item.Categories and check if any category matches selectedCategoriesJSON.categories      
       let hasMatchingCategory = JSON.parse(item.category).some(category => 
-         selectedCategoriesJSON.category.includes(category)
+         selectedCategoriesJSON.categories.includes(category)
       );
 
       // Loop through listing types and check if any listing type matches selectedListingTypeJSON.listingType
