@@ -73,5 +73,5 @@ label {
 }
 
 input[type="checkbox"] + label {
-    font-weight: normal;
+    font-weight: lighter;
 }
