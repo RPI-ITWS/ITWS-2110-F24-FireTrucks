@@ -1,0 +1,14 @@
+10_24 Meeting
+
+This meeting we were preparing for the presentation. We talked about the slides we were 
+going to create as well as what we all finished for the sprint.
+
+Robert: Finished the login and create account, researched on how to verify emails but still needs to implement.
+
+Tim: Created the auction pages and giveaway pages, so when a user clicks on either they can view details are participate.
+
+Satyam: Created HTML, PHP, and CSS for profiles.
+
+Mikah: Created backend for the goods page.
+
+Shivani: Created backend for the listing form.

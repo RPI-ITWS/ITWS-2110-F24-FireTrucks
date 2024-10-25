@@ -15,8 +15,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-session_start();
-$userId = $_SESSION['id']; // Assuming user ID is stored in session
+if (!isset($_SESSION['id'])) {
+    echo "User is not logged in.";
+    $userId=1;
+}
+else {
+    $userId = $_SESSION['id']; // Assuming user ID is stored in session
+}
+
 
 // Fetch user details
 $sqlUser = "SELECT Email FROM users WHERE id = ?";
@@ -34,14 +40,14 @@ $stmtListings->execute();
 $listings = $stmtListings->get_result();
 
 // Fetch auctions for the user
-$sqlAuctions = "SELECT * FROM auctionData WHERE Name = (SELECT Name from users WHERE id = ?)";
+$sqlAuctions = "SELECT * FROM auctionData WHERE Name = (SELECT Name AS n FROM users WHERE id = ?)";
 $stmtAuctions = $conn->prepare($sqlAuctions);
 $stmtAuctions->bind_param("i", $userId);
 $stmtAuctions->execute();
 $auctions = $stmtAuctions->get_result();
 
 // Fetch giveaways for the user
-$sqlGiveaways = "SELECT * FROM giveawayData WHERE giveaway_id = (SELECT giveaway_id FROM giveawayEntreesData WHERE Name = (SELECT Name from users WHERE id = ?)";
+$sqlGiveaways = "SELECT * FROM giveawayData WHERE giveaway_id = (SELECT giveaway_id AS gid FROM giveawayEntreesData WHERE Name = (SELECT Name AS n FROM users WHERE id = ?)";
 $stmtGiveaways = $conn->prepare($sqlGiveaways);
 $stmtGiveaways->bind_param("i", $userId);
 $stmtGiveaways->execute();
