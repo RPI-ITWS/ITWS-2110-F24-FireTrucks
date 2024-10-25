@@ -25,7 +25,7 @@ else {
 
 
 // Fetch user details
-$sqlUser = "SELECT Email FROM users WHERE UserId = ?";
+$sqlUser = "SELECT Email FROM users WHERE id = ?";
 $stmtUser = $conn->prepare($sqlUser);
 $stmtUser->bind_param("i", $userId);
 $stmtUser->execute();
@@ -33,7 +33,7 @@ $resultUser = $stmtUser->get_result();
 $user = $resultUser->fetch_assoc();
 
 // Fetch listings for the user
-$sqlListings = "SELECT * FROM listingData WHERE ListingId = ?";
+$sqlListings = "SELECT * FROM listingData WHERE id = ?";
 $stmtListings = $conn->prepare($sqlListings);
 $stmtListings->bind_param("i", $userId);
 $stmtListings->execute();
@@ -47,7 +47,7 @@ $stmtAuctions->execute();
 $auctions = $stmtAuctions->get_result();
 
 // Fetch giveaways for the user
-$sqlGiveaways = "SELECT * FROM giveawayData WHERE giveaway_id = (SELECT giveaway_id AS gid FROM giveawayEntreesData WHERE Name = (SELECT Name AS n FROM users WHERE UserId = ?)";
+$sqlGiveaways = "SELECT * FROM giveawayData WHERE giveaway_id = (SELECT giveaway_id AS gid FROM giveawayEntreesData WHERE Name = (SELECT Name AS n FROM users WHERE id = ?)";
 $stmtGiveaways = $conn->prepare($sqlGiveaways);
 $stmtGiveaways->bind_param("i", $userId);
 $stmtGiveaways->execute();
