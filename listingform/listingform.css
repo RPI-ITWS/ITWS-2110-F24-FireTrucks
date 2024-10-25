@@ -71,3 +71,7 @@ label {
 .hidden {
     display: none;
 }
+
+input[type="checkbox"] + label {
+    font-weight: normal;
+}
