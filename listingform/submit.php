@@ -19,7 +19,8 @@
 
    if ($formType == 'auction') {
         $title = $_POST['title'];
-        $category = $_POST['category'];
+        $categories = $_POST['category'];
+        $categoriesString = json_encode($categories);
         $description = $_POST['description'];
         $startbid = $_POST['startbid'];
         $auctionEnd = $_POST['auctionEnd'];
@@ -30,7 +31,7 @@
 
         $insQuery = "INSERT INTO auctionsData (`title`, `category`, `description`, `starting_bid`, `time_end`, `host name`, `email`, `phone`, `image_url`) VALUES(?,?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("sssdsssss",$title, $category, $description, $startbid, $auctionEnd, $hostName, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("sssdsssss",$title, $categoriesString, $description, $startbid, $auctionEnd, $hostName, $email, $phoneNum, $imageUrl);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
                 <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
@@ -50,7 +51,8 @@
         $statement->close();
     } elseif ($formType == 'giveaway') {
         $title = $_POST['title'];
-        $category = $_POST['category'];
+        $categories = $_POST['category'];
+        $categoriesString = json_encode($categories);
         $description = $_POST['description'];
         $hostName = $_POST['hostName'];
         $giveawayEnd = $_POST['giveawayEnd'];
@@ -60,7 +62,7 @@
 
         $insQuery = "INSERT INTO giveawayData (`name`, `category`, `description`, `giveaway host`, `time_end`, `email`, `phone`, `image_url`) VALUES(?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("ssssssss",$title, $category, $description, $hostName, $giveawayEnd, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("ssssssss",$title, $categoriesString, $description, $hostName, $giveawayEnd, $email, $phoneNum, $imageUrl);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
@@ -80,7 +82,8 @@
         $statement->close();
     } elseif ($formType == 'good') {
         $title = $_POST['title'];
-        $category = $_POST['category'];
+        $categories = $_POST['category'];
+        $categoriesString = json_encode($categories);
         $description = $_POST['description'];
         $price = $_POST['price'];
         $seller = $_POST['seller'];
@@ -90,7 +93,7 @@
 
         $insQuery = "INSERT INTO listingData (`Name`, `category`, `Description`, `Price`, `Seller`, `Email`, `PhoneNumber`, `image_url`) VALUES(?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("sssdssss",$title, $category, $description, $price, $seller, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("sssdssss",$title, $categoriesString, $description, $price, $seller, $email, $phoneNum, $imageUrl);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
@@ -110,7 +113,8 @@
         $statement->close();
     } elseif ($formType == 'service') {
         $title = $_POST['title'];
-        $category = $_POST['category'];
+        $categories = $_POST['category'];
+        $categoriesString = json_encode($categories);
         $description = $_POST['description'];
         $price = $_POST['price'];
         $seller = $_POST['seller'];
@@ -120,7 +124,7 @@
 
         $insQuery = "INSERT INTO servicesData (`Name`, `category`, `Description`, `Price`, `Seller`, `Email`, `PhoneNumber`, `image_url`) VALUES(?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("sssdssss",$title, $category, $description, $price, $seller, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("sssdssss",$title, $categoriesString, $description, $price, $seller, $email, $phoneNum, $imageUrl);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
