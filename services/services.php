@@ -19,35 +19,7 @@ if ($conn->connect_error) {
 
 // Goods data
 $data = [];
-$sql = "SELECT * FROM `listingData`"; // Ensure the table name matches exactly
-$result = $conn->query($sql);
-
-if ($result === false) {
-    die(json_encode(['error' => 'Query error: ' . $conn->error]));
-}
-
-if ($result->num_rows > 0) {
-   while ($row = $result->fetch_assoc()) {
-      $data[] = $row; // Append each row to the $data array
-   }
-}
-
-// Auction data
-$sql = "SELECT * FROM `auctionsData`"; // Ensure the table name matches exactly
-$result = $conn->query($sql);
-
-if ($result === false) {
-    die(json_encode(['error' => 'Query error: ' . $conn->error]));
-}
-
-if ($result->num_rows > 0) {
-   while ($row = $result->fetch_assoc()) {
-      $data[] = $row; // Append each row to the $data array
-   }
-}
-
-// Giveaway data
-$sql = "SELECT * FROM `giveawayData`"; // Ensure the table name matches exactly
+$sql = "SELECT * FROM `servicesData`"; // Ensure the table name matches exactly
 $result = $conn->query($sql);
 
 if ($result === false) {
