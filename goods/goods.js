@@ -36,13 +36,13 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
       // Loop through listing types and check if any listing type matches selectedListingTypeJSON.listingType
       let hasMatchingListingType = false;
       for (let listingType of selectedListingTypeJSON.listingType) {
-         if (listingType === "standard" && item.isGiveaway === "0" && item.isAuction === "0") {
+         if (listingType === "standard" && "ListingId" in item) {
             hasMatchingListingType = true;
             break; // Exit the loop if a match is found
-         } else if (listingType === "giveaways" && item.isGiveaway === "1") {
+         } else if (listingType === "giveaways" && "giveaway_id" in item) {
             hasMatchingListingType = true;
             break; // Exit the loop if a match is found
-         } else if (listingType === "auctions" && item.isAuction === "1") {
+         } else if (listingType === "auctions" && "id" in item) {
             hasMatchingListingType = true;
             break; // Exit the loop if a match is found
          } 
@@ -50,8 +50,18 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
 
       // Checks if item price is in price range
       let isInPriceRange = false; 
-      if (parseInt(item.Price, 10) >= priceInputMin.value && parseInt(item.Price, 10) <= priceInputMax.value){
-         isInPriceRange = true;
+      if ("ListingId" in item){
+         if (parseInt(item.Price, 10) >= priceInputMin.value && parseInt(item.Price, 10) <= priceInputMax.value){
+            isInPriceRange = true;
+         }
+      } else if ("id" in item){
+         if (parseInt(item.starting_bid, 10) >= priceInputMin.value && parseInt(item.starting_bid, 10) <= priceInputMax.value){
+            isInPriceRange = true;
+         }
+      } else if ("giveaway_id" in item){
+         if (priceInputMin.value <= 0){
+            isInPriceRange = true;
+         }
       }
 
       // Checks if item name matches search 
@@ -61,14 +71,27 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
       } else {
          for (let word of searchText.words) {
             // Check if the item.Name contains the word (case-insensitive)
-            if (item.Name.toLowerCase().includes(word.toLowerCase())) {
-              search = true; // Set search to true if a match is found
-              break; // Exit the loop
+            if ("ListingId" in item){
+               if (item.Name.toLowerCase().includes(word.toLowerCase())) {
+                  search = true; // Set search to true if a match is found
+                  break; // Exit the loop
+               }
+            } else if ("id" in item){
+               if (item.title.toLowerCase().includes(word.toLowerCase())) {
+                  search = true; // Set search to true if a match is found
+                  break; // Exit the loop
+               }
+            } else if ("giveaway_id" in item){
+               if (item.name.toLowerCase().includes(word.toLowerCase())) {
+                  search = true; // Set search to true if a match is found
+                  break; // Exit the loop
+               }
             }
          }          
       }
 
-      if (hasMatchingCategory && hasMatchingListingType && isInPriceRange && search){
+      // Goods
+      if (hasMatchingCategory && hasMatchingListingType && isInPriceRange && search && "ListingId" in item){
          // Create a div for the listing
          const listingDiv = document.createElement("div");
          listingDiv.classList.add("listing");
@@ -96,15 +119,135 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
          // Create the price (h4)
          const price = document.createElement("h4");
          price.classList.add("price");
-         price.textContent = `$${item.Price}`;  // Set the price with a dollar sign
+         price.textContent = `Price: $${item.Price}`;  // Set the price with a dollar sign
    
          // Create the Buy Now button
          const button = document.createElement("button");
          button.classList.add("CTAbutton");
-         button.textContent = "Buy Now";
+         button.textContent = "Get Now";
+         button.onclick = function() {
+            const baseUrl = "ReplaceWithGoodSpecificPageWhenCreated"; // Replace with your desired URL
+            const id = item.ListingId; // Set the desired ID
+            const url = `${baseUrl}?id=${id}`; // Construct the URL with the query parameter
+            window.location.href = url; // Redirect the user to the constructed URL
+         };
+   
+         // Append all the elements into the textDiv
+         textDiv.appendChild(title);
+         textDiv.appendChild(description);
+         textDiv.appendChild(price);
+         textDiv.appendChild(button);
+   
+         // Append the image and the textDiv into the listingDiv
+         listingDiv.appendChild(img);
+         listingDiv.appendChild(textDiv);
+   
+         // Append the listingDiv into the container
+         container.appendChild(listingDiv);
+      }
+
+      // Auction
+      else if (hasMatchingCategory && hasMatchingListingType && isInPriceRange && search && "id" in item){
+         // Create a div for the listing
+         const listingDiv = document.createElement("div");
+         listingDiv.classList.add("listing");
+   
+         // Create the image element
+         const img = document.createElement("img");
+         img.src = item.image_url;  // Set the image link from the data
+         img.alt = item.title;       // Use the item name as the alt text
+         img.classList.add("listingImg");
+         
+         // Create the text container div
+         const textDiv = document.createElement("div");
+         textDiv.classList.add("listingText");
+   
+         // Create the title (h3)
+         const title = document.createElement("h3");
+         title.classList.add("listingTitle");
+         title.textContent = item.title;  // Set the title text from the data
+   
+         // Create the description (h5)
+         const description = document.createElement("h5");
+         description.classList.add("listingDescription");
+         description.textContent = item.description;  // Set the description text
+   
+         // Create the price (h4)
+         const price = document.createElement("h4");
+         price.classList.add("price");
+         fetch(`auctionPrice.php?auction_id=${item.id}`)
+         .then(response => response.json())
+         .then(data => {
+            const priceNum = data !== -1 ? data : item.starting_bid;
+            price.textContent = `Current Bid: $${priceNum}`;  // Set the price with a dollar sign
+         })
+
+         // Create the time remaining (h4)
+         // TO BE IMPLEMENTED
+   
+         // Create the Buy Now button
+         const button = document.createElement("button");
+         button.classList.add("CTAbutton");
+         button.textContent = "Bid Now";
          button.onclick = function() {
             const baseUrl = "https://firetrucks.eastus.cloudapp.azure.com/ITWS-2110-F24-FireTrucks/auction_specific/index.html"; // Replace with your desired URL
-            const id = item.ListingId; // Set the desired ID
+            const id = item.id; // Set the desired ID
+            const url = `${baseUrl}?id=${id}`; // Construct the URL with the query parameter
+            window.location.href = url; // Redirect the user to the constructed URL
+         };
+   
+         // Append all the elements into the textDiv
+         textDiv.appendChild(title);
+         textDiv.appendChild(description);
+         textDiv.appendChild(price);
+         textDiv.appendChild(button);
+   
+         // Append the image and the textDiv into the listingDiv
+         listingDiv.appendChild(img);
+         listingDiv.appendChild(textDiv);
+   
+         // Append the listingDiv into the container
+         container.appendChild(listingDiv);
+      }
+
+      // Giveaways
+      else if (hasMatchingCategory && hasMatchingListingType && isInPriceRange && search && "giveaway_id" in item){
+         // Create a div for the listing
+         const listingDiv = document.createElement("div");
+         listingDiv.classList.add("listing");
+   
+         // Create the image element
+         const img = document.createElement("img");
+         img.src = item.image_url;  // Set the image link from the data
+         img.alt = item.name;       // Use the item name as the alt text
+         img.classList.add("listingImg");
+         
+         // Create the text container div
+         const textDiv = document.createElement("div");
+         textDiv.classList.add("listingText");
+   
+         // Create the title (h3)
+         const title = document.createElement("h3");
+         title.classList.add("listingTitle");
+         title.textContent = item.name;  // Set the title text from the data
+   
+         // Create the description (h5)
+         const description = document.createElement("h5");
+         description.classList.add("listingDescription");
+         description.textContent = item.description;  // Set the description text
+   
+         // Create the price (h4)
+         const price = document.createElement("h4");
+         price.classList.add("price");
+         price.textContent = ``;  // Set the price with a dollar sign
+   
+         // Create the Buy Now button
+         const button = document.createElement("button");
+         button.classList.add("CTAbutton");
+         button.textContent = "Enter Now";
+         button.onclick = function() {
+            const baseUrl = "https://firetrucks.eastus.cloudapp.azure.com/ITWS-2110-F24-FireTrucks/giveaway_specific/index.html"; // Replace with your desired URL
+            const id = item.giveaway_id; // Set the desired ID
             const url = `${baseUrl}?id=${id}`; // Construct the URL with the query parameter
             window.location.href = url; // Redirect the user to the constructed URL
          };
@@ -203,6 +346,10 @@ function searchTextContent() {
    const searchWordsJSON = { words: wordsArray };
    
    return searchWordsJSON;
+}
+
+function smoothScroll(){
+   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 document.getElementById("searchInput").addEventListener("keydown", function(event) {

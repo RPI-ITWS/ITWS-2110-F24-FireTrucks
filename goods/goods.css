@@ -39,7 +39,7 @@ body{
 
 #sidebar{
    width: 300px;
-   height: 1270px;
+   height: 1280px;
    margin: 12px 20px 0 20px;
    align-items: top;
    background-color: var(--DarkRed100);
@@ -133,7 +133,6 @@ body{
 }
 
 .price{
-   width: 61px;
    margin: 4px 0 0 0;
    display: inline-block;
 }
