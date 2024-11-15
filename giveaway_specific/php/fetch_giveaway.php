@@ -50,9 +50,14 @@ if ($giveaway_result->num_rows > 0) {
     $unique_participants = $participants_data['unique_participants'];
 
     // Calculate time left
-    $time_end = new DateTime($giveaway['time_end']);
+    $time_end = new DateTime($auction['time_end']);
     $now = new DateTime();
-    $time_left = $time_end->diff($now)->format('%d days %h hours %i minutes');
+
+    if ($time_end < $now) {
+        $time_left = 'Giveaway Over!';
+    } else {
+        $time_left = $time_end->diff($now)->format('%d days %h hours %i minutes');
+    }
 
     // Send back data
     echo json_encode([

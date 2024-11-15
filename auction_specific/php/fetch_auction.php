@@ -55,7 +55,12 @@ if ($auction_result->num_rows > 0) {
     // Calculate time left
     $time_end = new DateTime($auction['time_end']);
     $now = new DateTime();
-    $time_left = $time_end->diff($now)->format('%d days %h hours %i minutes');
+
+    if ($time_end < $now) {
+        $time_left = 'Auction Over!';
+    } else {
+        $time_left = $time_end->diff($now)->format('%d days %h hours %i minutes');
+    }
 
     // Send back data
     echo json_encode([
