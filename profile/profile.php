@@ -23,9 +23,8 @@ else {
     $userId = $_SESSION['id']; // Assuming user ID is stored in session
 }
 
-
 // Fetch user details
-$sqlUser = "SELECT Email FROM users WHERE UserId = ?";
+$sqlUser = "SELECT * FROM users WHERE UserId = ?";
 $stmtUser = $conn->prepare($sqlUser);
 $stmtUser->bind_param("i", $userId);
 $stmtUser->execute();
@@ -64,7 +63,6 @@ $giveaways = $stmtGiveaways->get_result();
 $conn->close();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,16 +70,32 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($user['Email']); ?>'s Profile</title>
     <link rel="stylesheet" href="profile.css"> 
+    <link rel="stylesheet" href="../main.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Website Header -->
+   <div id="header">
+      <img src="images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
+      <div id="header-buttons">
+         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods Page</button>
+         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/services.html'">Services Page</button>
+         <button class="headerbutton" alt="Create Listing" onclick="window.location.href='../listingform/index.html'">Create Listing</button>
+         <div id="login-button">
+            
+         </div>
+      </div>
+      <script src="../main.js"></script>
+   </div>
+    <div class="head-container">
         <h1><?php echo htmlspecialchars($user['Email']); ?>'s Profile</h1>
-
+    </div>
+    <div class="container">
         <section>
             <h2>Your Listings</h2>
             <div class="scrollable-row">
                 <?php foreach ($listings as $listing): ?>
                     <div class="card">
+                        <img src=<?php echo htmlspecialchars($listing['image_url']); ?>>
                         <strong><?php echo htmlspecialchars($listing['Name']); ?></strong>
                         <p><?php echo htmlspecialchars($listing['Description']); ?></p>
                     </div>
@@ -94,6 +108,7 @@ $conn->close();
             <div class="scrollable-row">
                 <?php foreach ($giveaways as $giveaway): ?>
                     <div class="card">
+                        <img src=<?php echo htmlspecialchars($giveaway['image_url']); ?>>
                         <strong><?php echo htmlspecialchars($giveaway['name']); ?></strong>
                         <p><?php echo htmlspecialchars($giveaway['description']); ?></p>
                     </div>
@@ -106,6 +121,7 @@ $conn->close();
             <div class="scrollable-row">
                 <?php foreach ($auctions as $auction): ?>
                     <div class="card">
+                        <img src=<?php echo htmlspecialchars($auction['image_url']); ?>>
                         <strong><?php echo htmlspecialchars($auction['title']); ?></strong>
                         <p>Starting Bid: $<?php echo htmlspecialchars($auction['description']); ?></p>
                     </div>
