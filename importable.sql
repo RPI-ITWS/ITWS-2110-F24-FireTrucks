@@ -1,4 +1,4 @@
-CREATE TABLE `listingData` (
+CREATE TABLE listingData (
    `ListingId` smallint unsigned NOT NULL AUTO_INCREMENT,
    `Name` varchar(100) NOT NULL,
    `Seller` varchar(100) NOT NULL,
@@ -6,9 +6,12 @@ CREATE TABLE `listingData` (
    `Description` varchar(300) NOT NULL,
    `PhoneNumber` varchar(100) NOT NULL,
    `Email` varchar(100) NOT NULL,
-   PRIMARY KEY (`ListingId`)
+   `image_url` varchar(300) NOT NULL,
+   `UserId` smallint unsigned NOT NULL,
+   `isGiveaway` tinyint(1) NOT NULL DEFAULT 0,
+   `isAuction` tinyint(1) NOT NULL DEFAULT 0,
+   PRIMARY KEY (ListingId)
 );
-
 
 CREATE TABLE auctionsData (
    `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,14 +44,16 @@ CREATE TABLE `loginData` (
 );
 
 CREATE TABLE `servicesData` (
-    `ServiceId` smallint unsigned NOT NULL AUTO_INCREMENT,
-    `Name` varchar(100) NOT NULL,
-    `Seller` varchar(100) NOT NULL,
-    `Price` float NOT NULL,
-    `Description` varchar(300) NOT NULL,
-    `PhoneNumber` varchar(100) NOT NULL,
-    `Email` varchar(100) NOT NULL,
-    PRIMARY KEY (`ServiceId`)
+   `ServiceId` smallint unsigned NOT NULL AUTO_INCREMENT,
+   `Name` varchar(100) NOT NULL,
+   `Seller` varchar(100) NOT NULL,
+   `Price` float NOT NULL,
+   `Description` varchar(300) NOT NULL,
+   `PhoneNumber` varchar(100) NOT NULL,
+   `Email` varchar(100) NOT NULL,
+   `category` varchar(100) NOT NULL,
+   `image_url` varchar(300) NOT NULL,
+   PRIMARY KEY (`ServiceId`)
 );
 
 CREATE TABLE `giveawayData` (

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Service Specific</Title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="./service_specific.css">
+    <script src="./js/service_specific.js" defer></script>
+</head>
+
+<body>
+   <!-- Website Header -->
+   <div id="header">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
+      <div id="header-buttons">
+         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/goods.html'">Goods Page</button>
+         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/services.html'">Services Page</button>
+         <div id="login-button">
+               <!-- Button will be created here -->
+         </div>
+      </div>
+   </div>
+
+   <div id="service-container">
+      <div id="error-message" style="display: none;">
+         <p>Error fetching service.</p>
+      </div>
+
+      <div id="current-item" class="bubble" style="display: none;">
+         <h1 id="itemTitle">Item Title</h1>
+         <div class="image">
+            <img id="serviceImage" alt="Service Image">
+         </div>
+         <p id="itemDescription" class="description">Description</p>
+
+         <div class="service-details">
+            <div class="left-right">
+               <p><strong>Seller:</strong> <span id="itemSeller">John Doe</span></p>
+               <p><strong>Price:</strong> $<span id="itemPrice">990.00</span></p>
+            </div>
+            <div class="left-right">
+               <p><strong>Phone Number:</strong> <span id="itemPhoneNumber">123-456-7890</span></p>
+               <p><strong>Email:</strong> <span id="itemEmail">johndoe@example.com</span></p>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
