@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare a select statement
         $sql = "SELECT UserId, email, password, email_verified FROM users WHERE email = ?";
 
-        if ($stmt = mysqli_prepare($db, $sql)) {
+        if ($stmt = mysqli_prepare($conn, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_email);
 
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close connection
-    mysqli_close($db);
+    mysqli_close($conn);
 }
 ?>
 
