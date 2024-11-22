@@ -71,3 +71,25 @@ input:focus {
 .create-btn:hover {
    background-color: #c0031c;
 }
+
+p {
+   text-align: center;
+   margin-top: 15px;
+   font-size: 14px;
+}
+
+p a {
+   color: #d6001c;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+p a:hover {
+   text-decoration: underline;
+}
+
+.invalid-feedback {
+   color: #c0031c;
+   font-size: 12px;
+   margin-top: 5px;
+}
