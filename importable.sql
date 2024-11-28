@@ -64,6 +64,7 @@ CREATE TABLE `giveawayData` (
     `description` varchar(300) NOT NULL,
     `time_posted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `time_end` DATETIME NOT NULL,
+    `winnerId` INT,
     PRIMARY KEY (`giveaway_id`)
 );
 
