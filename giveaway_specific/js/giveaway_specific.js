@@ -17,6 +17,10 @@ function fetchGiveawayDetails(giveawayId) {
          document.querySelector('#itemTitle').textContent = data.title;
          document.querySelector('#itemDescription').textContent = data.description;
          document.querySelector('.seller-name').textContent = data.seller;
+         document.querySelector('#winner').textContent = data.winner_first_name + " " + data.winner_last_name;
+         if(data.time_left == 'Giveaway Over!') {
+            document.querySelector('#winner-block').style.display = '';
+         }
          document.querySelector('.time').textContent = data.time_left;
          document.querySelector('#numberEntrants').textContent = "Number of entrants: " + data.participantsNum;
 

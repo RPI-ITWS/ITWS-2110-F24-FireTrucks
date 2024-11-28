@@ -3,12 +3,11 @@
    margin: 0 auto;
    padding: 1.5rem; 
    display: grid;
-   grid-template-columns: 3fr 1fr; /* 3/4 for item section, 1/4 for place bid section */
+   grid-template-columns: 3fr 1fr; 
    grid-template-rows: auto auto;
    gap: 1rem; 
 }
 
-/* Box styles - white with shadow */
 #current-item, .enter-giveaway {
    background-color: white; 
    padding: 1rem; 
@@ -59,6 +58,7 @@
    color: var(--DarkRed100);
 }
 
+.seller .seller-name, .time-left .winner 
 .seller .seller-name, .time-left .time {
    font-size: 1.25rem; 
    font-weight: bold;

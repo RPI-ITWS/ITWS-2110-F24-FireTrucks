@@ -24,14 +24,28 @@ $bidder_name = isset($_POST['bidder_name']) ? $_POST['bidder_name'] : "";
 
 // Validate 
 if ($auction_id > 0 && $bid_amount > 0 && !empty($bidder_name) && $bidder_name != "") {
-   // Get the starting bid
-   $auction_sql = "SELECT starting_bid FROM auctionsData WHERE id = ?";
+   // Get auction details
+   $auction_sql = "SELECT starting_bid, time_end FROM auctionsData WHERE id = ?";
    $stmt = $conn->prepare($auction_sql);
    $stmt->bind_param("i", $auction_id);
    $stmt->execute();
    $auction_result = $stmt->get_result();
    $auction = $auction_result->fetch_assoc();
+
+   if (!$auction) {
+      echo json_encode(['success' => false, 'message' => 'Auction not found']);
+      exit;
+   }
+
    $starting_bid = $auction['starting_bid'] ?? 0;
+   $time_end = new DateTime($auction['time_end']);
+   $now = new DateTime();
+
+   // Check if auction is over
+   if ($now > $time_end) {
+      echo json_encode(['success' => false, 'message' => 'The auction has already ended and bids can no longer be placed']);
+      exit;
+   }
 
    // Get current highest bid
    $current_bid_sql = "SELECT MAX(bid_amount) AS current_bid FROM bidsData WHERE auction_id = ?";
