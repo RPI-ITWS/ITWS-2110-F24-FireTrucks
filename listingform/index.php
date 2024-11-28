@@ -122,13 +122,13 @@
             <input type="datetime-local" id="auctionEnd" name="auctionEnd"><br>
             <label for="hostName">Auction Host</label><br>
             <input type="text" placeholder="Name of host or organization" id="hostName" name="hostName" size="50"><br>
+            <label for="image">Image URl</label><br>
+            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <p id="contactInfo">Contact Info</p>
             <label for="email">RPI Email</label>
             <input type="email" placeholder="rcsid@rpi.edu" id="email" name="email" pattern="[a-zA-Z0-9._]+@rpi\.edu" required><br>
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-            <label for="image">Image URl</label><br>
-            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
                 <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
@@ -189,13 +189,13 @@
             <input type="text" placeholder="Name of host or organization" id="hostName" name="hostName" size="50"><br>
             <label for="giveawayEnd">Giveaway End Date and Time</label><br>
             <input type="datetime-local" id="giveawayEnd" name="giveawayEnd"><br>
+            <label for="image">Image URl</label><br>
+            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <p id="contactInfo">Contact Info</p>
             <label for="email">RPI Email</label>
             <input type="email" placeholder="rcsid@rpi.edu" id="email" name="email" pattern="[a-zA-Z0-9._]+@rpi\.edu" required><br>
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-            <label for="image">Image URl</label><br>
-            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
                 <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
@@ -253,18 +253,16 @@
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
             <label for="price">Price</label><br>
-            <input type="number" step="0.01" min="0" placeholder="200" id="price" name="price"><br>
+            <input type="number" step="0.01" min="0" placeholder="200" id="price" name="price" max="1000"><br>
             <label for="seller">Seller</label><br>
             <input type="text" pattern="[A-Za-z]+ [A-Za-z]+" placeholder="first and last name" id="seller" name="seller" size="50"><br>
             <label for="image">Image URl</label><br>
-            <textarea id="image" name="image" rows="2" cols="60" required></textarea><br>
+            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <p id="contactInfo">Contact Info</p>
             <label for="email">RPI Email</label>
             <input type="email" placeholder="rcsid@rpi.edu" id="email" name="email" pattern="[a-zA-Z0-9._]+@rpi\.edu" required><br>
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-            <label for="image">Image URl</label><br>
-            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
                 <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
@@ -306,16 +304,16 @@
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
             <label for="price">Price</label><br>
-            <input type="number" step="0.01" min="0" placeholder="200" id="price" name="price"><br>
+            <input type="number" step="0.01" min="0" placeholder="200" id="price" name="price" max="1000"><br>
             <label for="seller">Seller</label><br>
             <input type="text" pattern="[A-Za-z]+ [A-Za-z]+" placeholder="first and last name" id="seller" name="seller" size="50"><br>
+            <label for="image">Image URl</label><br>
+            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <p id="contactInfo">Contact Info</p>
             <label for="email">RPI Email</label>
             <input type="email" placeholder="rcsid@rpi.edu" id="email" name="email" pattern="[a-zA-Z0-9._]+@rpi\.edu" required><br>
             <label for="phoneNum">Phone Number</label>
             <input type="tel" placeholder="format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-            <label for="image">Image URl</label><br>
-            <textarea id="image" name="image" rows="2" cols="70"required></textarea><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
                 <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
