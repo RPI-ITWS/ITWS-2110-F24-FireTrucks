@@ -49,6 +49,13 @@ h2 {
     scroll-snap-align: start; 
 }
 
+.cardImg{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+ }
+
 .card:last-child {
     margin-right: 0; 
 }

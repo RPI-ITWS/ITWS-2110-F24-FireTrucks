@@ -14,6 +14,10 @@ body {
    flex-direction: column;
 }
 
+.alert {
+   color: red;
+}
+
 .login-container {
    background-color: white;
    padding: 30px;

@@ -24,7 +24,7 @@ else {
 }
 
 // Fetch user details
-$sqlUser = "SELECT * FROM users WHERE UserId = ?";
+$sqlUser = "SELECT Email FROM users WHERE UserId = ?";
 $stmtUser = $conn->prepare($sqlUser);
 $stmtUser->bind_param("i", $userId);
 $stmtUser->execute();
@@ -75,7 +75,7 @@ $conn->close();
 <body>
     <!-- Website Header -->
    <div id="header">
-      <img src="images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
       <div id="header-buttons">
          <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods Page</button>
          <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/services.html'">Services Page</button>
@@ -95,7 +95,7 @@ $conn->close();
             <div class="scrollable-row">
                 <?php foreach ($listings as $listing): ?>
                     <div class="card">
-                        <img src=<?php echo htmlspecialchars($listing['image_url']); ?>>
+                        <img src=<?php echo htmlspecialchars($listing['image_url']); ?> class="cardImg">
                         <strong><?php echo htmlspecialchars($listing['Name']); ?></strong>
                         <p><?php echo htmlspecialchars($listing['Description']); ?></p>
                     </div>
@@ -108,7 +108,7 @@ $conn->close();
             <div class="scrollable-row">
                 <?php foreach ($giveaways as $giveaway): ?>
                     <div class="card">
-                        <img src=<?php echo htmlspecialchars($giveaway['image_url']); ?>>
+                        <img src=<?php echo htmlspecialchars($giveaway['image_url']); ?> class="cardImg">
                         <strong><?php echo htmlspecialchars($giveaway['name']); ?></strong>
                         <p><?php echo htmlspecialchars($giveaway['description']); ?></p>
                     </div>
@@ -121,7 +121,7 @@ $conn->close();
             <div class="scrollable-row">
                 <?php foreach ($auctions as $auction): ?>
                     <div class="card">
-                        <img src=<?php echo htmlspecialchars($auction['image_url']); ?>>
+                        <img src=<?php echo htmlspecialchars($auction['image_url']); ?> class="cardImg">
                         <strong><?php echo htmlspecialchars($auction['title']); ?></strong>
                         <p>Starting Bid: $<?php echo htmlspecialchars($auction['description']); ?></p>
                     </div>
