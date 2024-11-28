@@ -17,6 +17,10 @@ function fetchAuctionDetails(auctionId) {
            document.querySelector('#itemTitle').textContent = data.title;
            document.querySelector('#itemDescription').textContent = data.description;
            document.querySelector('.bid-amount').textContent = '$' + data.current_bid;
+           if(data.time_left == 'Auction Over!') {
+               document.querySelector('#winner-block').style.display = '';
+           }
+           document.querySelector('.winner').textContent = data.winner;
            document.querySelector('.time').textContent = data.time_left;
 
            // Reveal hidden sections

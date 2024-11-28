@@ -31,17 +31,19 @@ if ($auction_result->num_rows > 0) {
     $auction = $auction_result->fetch_assoc();
 
     // Get current highest bid
-    $current_bid_sql = "SELECT MAX(bid_amount) AS current_bid FROM bidsData WHERE auction_id = ?";
+    $current_bid_sql = "SELECT bidder_name, bid_amount, bid_time FROM bidsData WHERE auction_id = ? ORDER BY bid_amount DESC, bid_time ASC LIMIT 1";
     $stmt = $conn->prepare($current_bid_sql);
-    $stmt->bind_param("i", $auction_id); // Substitute in id for ?
+    $stmt->bind_param("i", $auction_id);
     $stmt->execute();
     $current_bid_result = $stmt->get_result();
     $current_bid_row = $current_bid_result->fetch_assoc();
-    $current_bid = $current_bid_row['current_bid'] ?? null; // Null if no bids
+    $highest_bidder = $current_bid_row['bidder_name'] ?? null;
+    $highest_bid = $current_bid_row['bid_amount'] ?? null;
 
     // If no bids, show starting bid 
-    if ($current_bid === null) {
-        $current_bid = $auction['starting_bid'];
+    if ($highest_bid === null) {
+        $highest_bid = $auction['starting_bid'];
+        $highest_bidder = null; // No winner if no bids
     }
 
     // Get previous bidders
@@ -50,7 +52,7 @@ if ($auction_result->num_rows > 0) {
     $stmt->bind_param("i", $auction_id); 
     $stmt->execute();
     $bids_result = $stmt->get_result();
-    $bidders = $bids_result->fetch_all(MYSQLI_ASSOC); //MYSQLI_ASSOC = keys corresponds to column names
+    $bidders = $bids_result->fetch_all(MYSQLI_ASSOC); // MYSQLI_ASSOC = keys correspond to column names
 
     // Calculate time left
     $time_end = new DateTime($auction['time_end']);
@@ -58,8 +60,10 @@ if ($auction_result->num_rows > 0) {
 
     if ($time_end < $now) {
         $time_left = 'Auction Over!';
+        $winner = $highest_bidder;
     } else {
         $time_left = $time_end->diff($now)->format('%d days %h hours %i minutes');
+        $winner = null; 
     }
 
     // Send back data
@@ -68,9 +72,10 @@ if ($auction_result->num_rows > 0) {
         'title' => $auction['title'],
         'description' => $auction['description'],
         'image_url' => $auction['image_url'],
-        'current_bid' => $current_bid,  
+        'current_bid' => $highest_bid,  
         'time_left' => $time_left,
-        'bidders' => $bidders
+        'bidders' => $bidders,
+        'winner' => $winner
     ]);
 } else {
     // Auction not found
