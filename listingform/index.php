@@ -17,7 +17,7 @@
 
     // Check if user is logged in
     if (!isset($_SESSION['id'])) {
-        header("Location: login.php");
+        header("Location: ../login/login.php");
         echo "User is not logged in.";
         exit; // Optionally redirect the user to a login page
     }

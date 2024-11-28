@@ -43,7 +43,6 @@ body{
  
 #header{
    width: 100%;
-   max-width: 1300px;
    margin: 0 auto;
    display: flex;
    align-items: center;
@@ -52,7 +51,7 @@ body{
    background-color: white;
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
    z-index: 10;
-   padding: 0 20px;
+   padding: 0 0 20px 0;
 }
 
 #header-buttons{
