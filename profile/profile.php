@@ -24,7 +24,7 @@ else {
 }
 
 // Fetch user details
-$sqlUser = "SELECT Email FROM users WHERE UserId = ?";
+$sqlUser = "SELECT email FROM users WHERE UserId = ?";
 $stmtUser = $conn->prepare($sqlUser);
 $stmtUser->bind_param("i", $userId);
 $stmtUser->execute();
@@ -39,7 +39,7 @@ $stmtListings->execute();
 $listings = $stmtListings->get_result();
 
 // Fetch auctions for the user
-$sqlAuctions = "SELECT * FROM auctionsData WHERE host_name = (SELECT Name AS n FROM users WHERE UserId = ?)";
+$sqlAuctions = "SELECT * FROM auctionsData WHERE host_name = (SELECT first_name AS n FROM users WHERE UserId = ?)";
 $stmtAuctions = $conn->prepare($sqlAuctions);
 $stmtAuctions->bind_param("i", $userId);
 $stmtAuctions->execute();
@@ -51,7 +51,7 @@ $sqlGiveaways = "
     FROM giveawayData gd
     INNER JOIN giveawayEntreesData ge ON gd.giveaway_id = ge.giveaway_id
     WHERE ge.Name = (
-        SELECT Name 
+        SELECT first_name 
         FROM users 
         WHERE UserId = ?
     )";
@@ -68,7 +68,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($user['Email']); ?>'s Profile</title>
+    <title><?php echo htmlspecialchars($user['email']); ?>'s Profile</title>
     <link rel="stylesheet" href="profile.css"> 
     <link rel="stylesheet" href="../main.css">
 </head>
@@ -87,7 +87,7 @@ $conn->close();
       <script src="../main.js"></script>
    </div>
     <div class="head-container">
-        <h1><?php echo htmlspecialchars($user['Email']); ?>'s Profile</h1>
+        <h1><?php echo htmlspecialchars($user['email']); ?>'s Profile</h1>
     </div>
     <div class="container">
         <section>
