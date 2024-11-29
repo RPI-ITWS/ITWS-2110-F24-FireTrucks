@@ -75,7 +75,7 @@ $conn->close();
 <body>
     <!-- Website Header -->
    <div id="header">
-      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
       <div id="header-buttons">
         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods</button>
         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
