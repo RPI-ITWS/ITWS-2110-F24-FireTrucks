@@ -2,7 +2,7 @@
    $servername = "localhost";
    $username = "phpmyadmin";  
    $password = "Marketplace18";      
-   $dbname = "marketplace"; 
+   $dbname = "marketplace";
    
    $conn = new mysqli($servername, $username, $password, $dbname);
    

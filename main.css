@@ -26,29 +26,32 @@ body{
 }
 
 .headerbutton {
-   padding: 10px 20px;
+   padding: 10px 25px;
    margin: 0px 25px;
    font-size: 16px;
    border: none;
-   border-radius: 5px;
-   background-color: var(--DarkRed100);
+   border-radius: 15px;
+   background-color: #a73236;
    color: white;
+   transition: background-color 0.3s, transform 0.3s ease;
 }
 
 .headerbutton:hover{
    cursor: pointer;
-   background-color: var(--DarkRed075);
+   background-color: #ab2328;
 }
  
 #header{
-   width: 1300px;
+   width: 100%;
    margin: 0 auto;
    display: flex;
    align-items: center;
+   justify-content: space-between;
    height: 100px;
-   background-color: #ffffff50;
-   box-shadow: 0 3px 10px 0;
+   background-color: white;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
    z-index: 10;
+   padding: 0 0 20px 0;
 }
 
 #header-buttons{
@@ -58,6 +61,7 @@ body{
    align-items: center;
    height: 100%;
    margin-right: 40px;
+   gap: 15px;
 }
 
 .profile-container {
@@ -106,4 +110,13 @@ body{
  
 .dropdown-menu a:hover {
    background-color: #f0f0f0; 
+}
+
+#footer {
+   width: 100%;
+   background-color: #a73236;
+   color: white;
+   padding: 3px 0 3px 0;
+   text-align: center;
+   font-size: 17px;
 }

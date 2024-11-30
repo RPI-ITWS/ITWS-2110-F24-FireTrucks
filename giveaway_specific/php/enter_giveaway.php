@@ -19,8 +19,31 @@ if ($conn->connect_error) {
 $giveaway_id = isset($_POST['giveaway_id']) ? (int)$_POST['giveaway_id'] : null;
 $name = isset($_POST['user']) ? trim($_POST['user']) : null;
 
-// Validate that both giveaway_id and name were passed in and are not empty
+// making sure both giveaway_id and name were passed in and are not empty
 if ($giveaway_id !== null && $giveaway_id > 0 && !empty($name)) {
+   // Giveaway ended?
+   $time_check_sql = "SELECT time_end FROM giveawayData WHERE giveaway_id = ?";
+   $time_check_stmt = $conn->prepare($time_check_sql);
+   $time_check_stmt->bind_param("i", $giveaway_id);
+   $time_check_stmt->execute();
+   $time_check_result = $time_check_stmt->get_result();
+   $time_check = $time_check_result->fetch_assoc();
+
+   if ($time_check) {
+      $time_end = new DateTime($time_check['time_end']);
+      $now = new DateTime();
+
+      if ($now > $time_end) {
+         // Giveaway has ended
+         echo json_encode(['success' => false, 'message' => 'The giveaway has already ended and cannot be entered.']);
+         exit;
+      }
+   } else {
+      // Giveaway ID not found
+      echo json_encode(['success' => false, 'message' => 'Giveaway not found.']);
+         exit;
+   }
+
    // Check if the person is already entered in the giveaway
    $check_sql = "SELECT COUNT(*) AS entry_count FROM giveawayEntreesData WHERE giveaway_id = ? AND `name` = ?";
    $check_stmt = $conn->prepare($check_sql);
@@ -32,8 +55,7 @@ if ($giveaway_id !== null && $giveaway_id > 0 && !empty($name)) {
    // User already in giveaway
    if ($check['entry_count'] > 0) {
       echo json_encode(['success' => false, 'message' => 'You have already been entered!']);
-   }
-   else {
+   } else {
       $insert_sql = "INSERT INTO giveawayEntreesData (giveaway_id, `name`, entree_time) VALUES (?, ?, NOW())";
       $stmt = $conn->prepare($insert_sql);
       $stmt->bind_param("is", $giveaway_id, $name);
@@ -41,9 +63,8 @@ if ($giveaway_id !== null && $giveaway_id > 0 && !empty($name)) {
       if ($stmt->execute()) {
          echo json_encode(['success' => true, 'message' => 'You\'ve been entered!']);
       } else {
-         echo json_encode(['success' => false, 'message' => 'Error entering auction: ' . $stmt->error]);
+         echo json_encode(['success' => false, 'message' => 'Error entering giveaway: ' . $stmt->error]);
       }
-
    }
 } else {
    echo json_encode(['success' => false, 'message' => 'Invalid input data - id: ' . $giveaway_id . " name: " . $name]);
