@@ -1,0 +1,8 @@
+This meeting we went over the bugs our website currently had.
+
+- Page linking was still not working
+
+- Create account and login didn't work because of problems with database columns and .env package downloads
+
+Mikah finished his part for the sprint, but will continue working on other pending issues. Everyone else is still working 
+on their parts.
