@@ -47,16 +47,16 @@
 <body> 
    <!-- Website Header -->
    <div id="header">
-      <img src="images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='./index.html'">
+      <img src="./images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='./index.php'">
       <div id="header-buttons">
-         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='goods/index.html'">Goods Page</button>
-         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='services/services.html'">Services Page</button>
-         <button class="headerbutton" alt="Create Listing" onclick="window.location.href='listingform/index.html'">Create Listing</button>
-         <div id="login-button">
-            <!-- Login Button Content -->
-         </div>
+         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='goods/index.html'">Goods</button>
+         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='services/index.html'">Services</button>
+         <button class="headerbutton" alt="Auctions Page Button" onclick="window.location.href='auctions/auctions.html'">Auctions</button>
+         <button class="headerbutton" alt="Giveaways Page Button" onclick="window.location.href='giveaways/giveaways.html'">Giveaways</button>
+         <button class="headerbutton" alt="Create Listing" onclick="window.location.href='listingform/index.php'">Create Listing</button>
+         <div id="login-button"></div>
       </div>
-      <script src="main.js"></script>
+      <script src="../main.js"></script>
    </div>
     
    <!-- Featured Listings -->

@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body> 
    <!-- Website Header -->
    <div id="header">
-      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.html'">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
       <div id="header-buttons">
          <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods</button>
          <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
@@ -142,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p>Don't have an account? <a href="create_account.php">Sign up now</a>.</p>
       </form>
   </div>
-  <div id="footer">
+  <div id="footer" class="login-footer">
       <p>2024 RPI Marketplace. All rights reserved.</p>
    </div>
 </body>
