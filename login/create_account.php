@@ -29,7 +29,7 @@
             // Prepare a select statement to check if email is already taken
             $sql = "SELECT UserId FROM users WHERE email = ?";
             
-            if($stmt = mysqli_prepare($db, $sql)){
+            if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters
                 mysqli_stmt_bind_param($stmt, "s", $param_email);
                 
@@ -102,7 +102,7 @@
             // Prepare an insert statement
             $sql = "INSERT INTO users (first_name, last_name, phone_number, email, password, verification_token) VALUES (?, ?, ?, ?, ?, ?)";
             
-            if ($stmt = mysqli_prepare($db, $sql)) {
+            if ($stmt = mysqli_prepare($conn, $sql)) {
                 mysqli_stmt_bind_param($stmt, "ssssss", $param_first_name, $param_last_name, $param_phone_number, $param_email, $param_password, $param_verification_token);
                 
                 $param_verification_token = $verification_token;
