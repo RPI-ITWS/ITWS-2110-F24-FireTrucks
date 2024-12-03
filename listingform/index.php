@@ -1,4 +1,5 @@
 <?php
+    session_start();
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -19,7 +20,7 @@
     if (!isset($_SESSION['id'])) {
         header("Location: ../login/login.php");
         echo "User is not logged in.";
-        exit; // Optionally redirect the user to a login page
+        exit; 
     }
 
     // Retrieve userId from session
@@ -275,7 +276,7 @@
     <!--Form for Services-->
     <div class="box hidden" id="serviceform">
         <form action="submit.php" method="POST">
-            <input type="hidden" name="formType" value="giveaway">
+            <input type="hidden" name="formType" value="service">
             <input type="hidden" name="userID" value="<?php echo $userID; ?>">
             <h1>RPI Marketplace</h1>
             <p>Buy, sell, and trade with fellow RPI students.</p>
