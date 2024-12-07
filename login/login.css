@@ -5,11 +5,11 @@
 }
 
 body {
-   font-family: Arial, sans-serif;
-   background-color: #f7f7f7;
    display: flex;
-   min-height: 100vh;
-   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
 }
 
 .login-footer {
@@ -17,7 +17,7 @@ body {
 }
 
 .alert {
-   color: red;
+   color: #ab2328;
 }
 
 .login-container {
@@ -59,13 +59,13 @@ input {
 
 input:focus {
    outline: none;
-   border-color: #c0031c;
+   border-color: #ab2328;
 }
 
 .login-btn {
    width: 100%;
    padding: 10px;
-   background-color: #d6001c;
+   background-color: #ab2328;
    border: none;
    color: white;
    font-size: 18px;
