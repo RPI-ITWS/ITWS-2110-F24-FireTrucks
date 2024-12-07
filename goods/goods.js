@@ -126,7 +126,7 @@ function displayItems(selectedCategoriesJSON, selectedListingTypeJSON, searchTex
          button.classList.add("CTAbutton");
          button.textContent = "Get Now";
          button.onclick = function() {
-            const baseUrl = "ReplaceWithGoodSpecificPageWhenCreated"; // Replace with your desired URL
+            const baseUrl = "https://firetrucks.eastus.cloudapp.azure.com/ITWS-2110-F24-FireTrucks/listing_specific/index.html"; // Replace with your desired URL
             const id = item.ListingId; // Set the desired ID
             const url = `${baseUrl}?id=${id}`; // Construct the URL with the query parameter
             window.location.href = url; // Redirect the user to the constructed URL
