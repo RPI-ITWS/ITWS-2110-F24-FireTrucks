@@ -59,7 +59,7 @@ input:focus {
 .create-btn {
    width: 100%;
    padding: 10px;
-   background-color: #d6001c;
+   background-color: #ab2328;
    border: none;
    color: white;
    font-size: 18px;
@@ -69,7 +69,7 @@ input:focus {
 }
 
 .create-btn:hover {
-   background-color: #c0031c;
+   background-color: rgb(176, 3, 26);
 }
 
 p {
@@ -79,7 +79,7 @@ p {
 }
 
 p a {
-   color: #d6001c;
+   color: #ab2328;
    text-decoration: none;
    font-weight: bold;
 }
@@ -89,7 +89,7 @@ p a:hover {
 }
 
 .invalid-feedback {
-   color: #c0031c;
+   color: #ab2328;
    font-size: 12px;
    margin-top: 5px;
 }
