@@ -26,6 +26,7 @@ CREATE TABLE auctionsData (
 CREATE TABLE bidsData (
    `id` INT AUTO_INCREMENT PRIMARY KEY,
    `auction_id` INT NOT NULL,
+   `bidder_id` INT NOT NULL,
    `bidder_name` VARCHAR(255),
    `bid_amount` DECIMAL(10, 2) NOT NULL,
    `bid_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -72,6 +73,7 @@ CREATE TABLE giveawayEntreesData (
    `id` INT AUTO_INCREMENT PRIMARY KEY,
    `giveaway_id` SMALLINT UNSIGNED NOT NULL,
    `name` VARCHAR(255),
+   `user_id` INT NOT NULL,
    `entree_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    FOREIGN KEY (giveaway_id) REFERENCES giveawayData(giveaway_id)
 );

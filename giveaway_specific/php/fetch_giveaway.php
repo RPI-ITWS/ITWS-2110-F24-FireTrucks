@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "phpmyadmin";  
 $password = "Marketplace18";      
@@ -14,6 +15,15 @@ if ($conn->connect_error) {
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo json_encode(['success' => false, 'message' => 'ID is required']);
     exit;
+}
+
+// Check if logged in
+if (!isset($_SESSION['id'])) {
+    echo json_encode(['success' => false, 'message' => 'You must be logged in to access this page.']);
+    exit;
+}
+else {
+    $userId = $_SESSION['id']; 
 }
 
 // Get giveaway id from URL
@@ -34,7 +44,7 @@ if ($giveaway_result->num_rows > 0) {
     $giveaway = $giveaway_result->fetch_assoc();
     
     // Get number of bidders
-    $participants_sql = "SELECT COUNT(DISTINCT name) AS unique_participants FROM giveawayEntreesData WHERE giveaway_id = ?;";
+    $participants_sql = "SELECT COUNT(DISTINCT UserId) AS unique_participants FROM giveawayEntreesData WHERE giveaway_id = ?;";
     $stmt = $conn->prepare($participants_sql); 
     if ($stmt === false) {
         die("Error preparing statement: " . $conn->error);
