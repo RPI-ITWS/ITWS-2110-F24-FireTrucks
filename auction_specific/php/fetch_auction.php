@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "phpmyadmin";  
 $password = "Marketplace18";      
@@ -9,6 +10,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Login check
+if (!isset($_SESSION['id'])) {
+    echo json_encode(['success' => false, 'message' => 'You must be logged in to access this page.']);
+    exit;
+ }
+ else {
+    $userId = $_SESSION['id']; 
+ }  
 
 // Id value not passed in - return with error message
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -31,14 +41,39 @@ if ($auction_result->num_rows > 0) {
     $auction = $auction_result->fetch_assoc();
 
     // Get current highest bid
-    $current_bid_sql = "SELECT bidder_name, bid_amount, bid_time FROM bidsData WHERE auction_id = ? ORDER BY bid_amount DESC, bid_time ASC LIMIT 1";
+    $current_bid_sql = "
+        SELECT 
+            bidsData.bidder_id, 
+            bidsData.bid_amount, 
+            bidsData.bid_time, 
+            users.first_name, 
+            users.last_name
+        FROM 
+            bidsData
+        JOIN 
+            users
+        ON 
+            bidsData.bidder_id = users.UserId
+        WHERE 
+            bidsData.auction_id = ?
+        ORDER BY 
+            bidsData.bid_amount DESC, 
+            bidsData.bid_time ASC 
+        LIMIT 1
+    ";
     $stmt = $conn->prepare($current_bid_sql);
     $stmt->bind_param("i", $auction_id);
     $stmt->execute();
     $current_bid_result = $stmt->get_result();
     $current_bid_row = $current_bid_result->fetch_assoc();
-    $highest_bidder = $current_bid_row['bidder_name'] ?? null;
-    $highest_bid = $current_bid_row['bid_amount'] ?? null;
+
+    $highest_bidder = null;
+    if ($current_bid_row) {
+        $highest_bidder = $current_bid_row['first_name'] . ' ' . $current_bid_row['last_name'];
+        $highest_bid = $current_bid_row['bid_amount'];
+    } else {
+        $highest_bid = null;
+    }
 
     // If no bids, show starting bid 
     if ($highest_bid === null) {
@@ -47,12 +82,39 @@ if ($auction_result->num_rows > 0) {
     }
 
     // Get previous bidders
-    $bids_sql = "SELECT bidder_name, bid_amount, bid_time, `anonymous` FROM bidsData WHERE auction_id = ? ORDER BY bid_time DESC";
-    $stmt = $conn->prepare($bids_sql); 
-    $stmt->bind_param("i", $auction_id); 
+    $bids_sql = "
+        SELECT 
+            bidsData.bidder_id, 
+            bidsData.bid_amount, 
+            bidsData.bid_time, 
+            bidsData.anonymous, 
+            users.first_name, 
+            users.last_name
+        FROM 
+            bidsData
+        LEFT JOIN 
+            users
+        ON 
+            bidsData.bidder_id = users.UserId
+        WHERE 
+            bidsData.auction_id = ?
+        ORDER BY 
+            bidsData.bid_time DESC
+    ";
+
+    $stmt = $conn->prepare($bids_sql);
+    $stmt->bind_param("i", $auction_id);
     $stmt->execute();
     $bids_result = $stmt->get_result();
-    $bidders = $bids_result->fetch_all(MYSQLI_ASSOC); // MYSQLI_ASSOC = keys correspond to column names
+    $bidders = $bids_result->fetch_all(MYSQLI_ASSOC);
+
+    foreach ($bidders as &$bid) {
+        if ($bid['anonymous']) {
+            $bid['bidder_name'] = 'Anonymous';
+        } else {
+            $bid['bidder_name'] = $bid['first_name'] . ' ' . $bid['last_name'];
+        }
+    }
 
     // Calculate time left
     $time_end = new DateTime($auction['time_end']);
