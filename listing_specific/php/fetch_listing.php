@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "phpmyadmin";  
 $password = "Marketplace18";      
@@ -9,6 +10,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Login check
+if (!isset($_SESSION['id'])) {
+    echo json_encode(['success' => false, 'message' => 'You must be logged in to access this page.']);
+    exit;
+ }
+ else {
+    $userId = $_SESSION['id']; 
+ }
 
 // Id value not passed in - return with error message
 if (!isset($_GET['id']) || empty($_GET['id'])) {
