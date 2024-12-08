@@ -38,7 +38,7 @@
                 <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
                 <Title>Success!</Title>
                     <script> setTimeout(function() {
-                        window.location.href = '../index.html';}, 2000);
+                        window.location.href = '../index.php';}, 2000);
                     </script>
                 </head>
                 <body>
@@ -70,7 +70,7 @@
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
             <Title>Success!</Title>
                 <script> setTimeout(function() {
-                    window.location.href = '../index.html';}, 2000);
+                    window.location.href = '../index.php';}, 2000);
                 </script>
             </head>
             <body>
@@ -102,7 +102,7 @@
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
             <Title>Success!</Title>
                 <script> setTimeout(function() {
-                    window.location.href = '../index.html';}, 2000);
+                    window.location.href = '../index.php';}, 2000);
                 </script>
             </head>
             <body>
@@ -134,7 +134,7 @@
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
             <Title>Success!</Title>
                 <script> setTimeout(function() {
-                    window.location.href = '../index.html';}, 2000);
+                    window.location.href = '../index.php';}, 2000);
                 </script>
             </head>
             <body>

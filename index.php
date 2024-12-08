@@ -59,17 +59,24 @@ if (!$resultGiveaways) {
 <body> 
    <!-- Website Header -->
    <div id="header">
-      <img src="images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='./index.php'">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
       <div id="header-buttons">
-         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='goods/index.html'">Goods</button>
-         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='services/index.html'">Services</button>
-         <button class="headerbutton" alt="Auctions Page Button" onclick="window.location.href='auctions/auctions.html'">Auctions</button>
-         <button class="headerbutton" alt="Giveaways Page Button" onclick="window.location.href='giveaways/giveaways.html'">Giveaways</button>
-         <button class="headerbutton" alt="Create Listing" onclick="window.location.href='listingform/index.php'">Create Listing</button>
-         <div id="login-button"></div>
+         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods</button>
+         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
+         <button class="headerbutton" alt="Create Listing Button" onclick="window.location.href='../listingform/index.php'">Create Listing</button>
+         <button class="headerbutton" alt="Profile Page Button" onclick="window.location.href='../profile/profile.php'">Profile</button>
+         <?php
+            if (isset($_SESSION['id'])) {
+               echo '<button class="headerbutton" alt="Logout Button" onclick="window.location.href=\'..login/logout.php\' ">Logout</button>';
+            }
+            else {
+               echo '<button class="headerbutton" alt="Login Button" onclick="window.location.href=\'..login/login.php\' ">Login</button>';
+            }
+         ?>
       </div>
       <script src="../main.js"></script>
    </div>
+   <main>
     
    <!-- Featured Listings -->
    <div class="listingSection">
@@ -157,7 +164,10 @@ if (!$resultGiveaways) {
          <?php } ?>
       </div>
    </div>
-
+</main>
+<div id="footer">
+      <p>2024 RPI Marketplace. All rights reserved.</p>
+   </div>
    <?php $conn->close(); ?>
 </body>
 </html>
