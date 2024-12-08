@@ -24,6 +24,7 @@ function fetchServiceDetails(serviceId) {
          document.getElementById('current-item').style.display = 'block';
       } else {
          // Show error message if service not found
+         document.getElementById('error-message').textContent = 'Error fetching service: ' + data.message;
          document.getElementById('error-message').style.display = 'block';
       }
    })
