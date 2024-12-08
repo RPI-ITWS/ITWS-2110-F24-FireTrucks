@@ -25,6 +25,7 @@ function fetchAuctionDetails(listingId) {
          document.getElementById('current-item').style.display = 'block';
       } else {
          // Show error message if listing not found
+         document.getElementById('error-message').textContent = 'Error fetching listing: ' + data.message;
          document.getElementById('error-message').style.display = 'block';
       }
    })

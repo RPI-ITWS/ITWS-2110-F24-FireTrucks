@@ -29,6 +29,7 @@ function fetchGiveawayDetails(giveawayId) {
          document.querySelector('.enter-giveaway').style.display = 'block';
       } else {
          // Show error message if auction not found
+         document.getElementById('error-message').textContent = 'Error fetching giveaway: ' + data.message;
          document.getElementById('error-message').style.display = 'block';
       }
    })
