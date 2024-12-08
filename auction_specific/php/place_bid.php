@@ -1,10 +1,9 @@
 <?php
-// Enable error reporting for debugging
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Database connection details
 $servername = "localhost";
 $username = "phpmyadmin";  
 $password = "Marketplace18";      
@@ -14,6 +13,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+}
+
+// Login check
+if (!isset($_SESSION['id'])) {
+   echo json_encode(['success' => false, 'message' => 'You must be logged in to access this page.']);
+   exit;
+}
+else {
+   $userId = $_SESSION['id']; 
 }
 
 // Get POST request data
@@ -59,9 +67,9 @@ if ($auction_id > 0 && $bid_amount > 0 && !empty($bidder_name) && $bidder_name !
    // Check if the new bid is higher than the current highest bid
    if ($bid_amount > $current_bid && $bid_amount > $starting_bid) {
       // Add bid
-      $insert_sql = "INSERT INTO bidsData (auction_id, bidder_name, bid_amount, bid_time, anonymous) VALUES (?, ?, ?, NOW(), ?)";
+      $insert_sql = "INSERT INTO bidsData (auction_id, bid_amount, bid_time, anonymous, bidder_id) VALUES (?, ?, NOW(), ?, ?)";
       $stmt = $conn->prepare($insert_sql);
-      $stmt->bind_param("isdi", $auction_id, $bidder_name, $bid_amount, $anonymous);
+      $stmt->bind_param("isdi", $auction_id, $bid_amount, $anonymous, $userId);
       
       if ($stmt->execute()) {
          echo json_encode(['success' => true, 'message' => 'Bid placed successfully']);
