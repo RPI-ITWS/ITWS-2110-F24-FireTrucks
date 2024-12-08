@@ -32,7 +32,7 @@
 
         $insQuery = "INSERT INTO auctionsData (`title`, `category`, `description`, `starting_bid`, `time_end`, `host_name`, `email`, `phone`, `image_url`, `userID`) VALUES(?,?,?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("sssdsssssi",$title, $categoriesString, $description, $startbid, $auctionEnd, $hostName, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("sssdsssssi",$title, $categoriesString, $description, $startbid, $auctionEnd, $hostName, $email, $phoneNum, $imageUrl, $userID);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
                 <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
@@ -64,7 +64,7 @@
 
         $insQuery = "INSERT INTO giveawayData (`name`, `category`, `description`, `giveaway host`, `time_end`, `email`, `phone`, `image_url`, `userID`) VALUES(?,?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("ssssssssi",$title, $categoriesString, $description, $hostName, $giveawayEnd, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("ssssssssi",$title, $categoriesString, $description, $hostName, $giveawayEnd, $email, $phoneNum, $imageUrl, $userID);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
@@ -96,7 +96,7 @@
 
         $insQuery = "INSERT INTO listingData (`Name`, `category`, `Description`, `Price`, `Seller`, `Email`, `PhoneNumber`, `image_url`, `UserID`) VALUES(?,?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("sssdssssi",$title, $categoriesString, $description, $price, $seller, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("sssdssssi",$title, $categoriesString, $description, $price, $seller, $email, $phoneNum, $imageUrl, $userID);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
@@ -128,7 +128,7 @@
 
         $insQuery = "INSERT INTO servicesData (`Name`, `category`, `Description`, `Price`, `Seller`, `Email`, `PhoneNumber`, `image_url`, `UserID`) VALUES(?,?,?,?,?,?,?,?,?)";
         $statement = $db->prepare($insQuery);
-        $statement->bind_param("sssdssssi",$title, $categoriesString, $description, $price, $seller, $email, $phoneNum, $imageUrl);
+        $statement->bind_param("sssdssssi",$title, $categoriesString, $description, $price, $seller, $email, $phoneNum, $imageUrl, $userID);
         if($statement->execute()) {
             echo "<!DOCTYPE html> <html lang='en'>
             <head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
