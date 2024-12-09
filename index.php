@@ -118,7 +118,7 @@ if (!$resultGiveaways) {
             <div class="listingText">
                <h3 class="listingTitle"><?php echo htmlspecialchars($row['title']); ?></h3>
                <h5 class="listingDescription"><?php echo htmlspecialchars($row['description']); ?></h5>
-               <h4 class="price">Starting Bid: $<?php echo htmlspecialchars($row['starting_bid']); ?></h4>
+               <h4 class="price">$<?php echo htmlspecialchars($row['starting_bid']); ?></h4>
                <?php
                if (!isset($_SESSION['id'])) {
                    // User is not logged in
