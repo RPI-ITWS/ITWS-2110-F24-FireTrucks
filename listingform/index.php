@@ -40,17 +40,18 @@
 </head>
 
 <body>
-    <div id="header">
-        <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
-        <div id="header-buttons">
-           <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods</button>
-           <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
-           <button class="headerbutton" alt="Auctions Page Button" onclick="window.location.href='../auctions/auctions.html'">Auctions</button>
-           <button class="headerbutton" alt="Giveaways Page Button" onclick="window.location.href='../giveaways/giveaways.html'">Giveaways</button>
-           <button class="headerbutton" alt="Profile Page Button" onclick="window.location.href='../profile/profile.php'">Profile</button>
-        </div>
-        <script src="../main.js"></script>
-     </div>
+<div id="header">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
+      <div id="header-buttons">
+         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='../goods/index.html'">Goods</button>
+         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
+         <button class="headerbutton" alt="Create Listing Button" onclick="window.location.href='../listingform/index.php'">Create Listing</button>
+         <button class="headerbutton" alt="Profile Page Button" onclick="window.location.href='../profile/profile.php'">Profile</button>
+         <button class="headerbutton" alt="Logout Button" onclick="window.location.href='..login/logout.php' "> Logout</button>
+      </div>
+      <script src="../main.js"></script>
+   </div>
+   <main>
     <!--Initial form to choose type of listing-->
     <div class="box">
         <form>
@@ -295,7 +296,7 @@
                         <input type="checkbox" name="category[]" value="moving">
                         <label for="moving">Moving Assistance</label>
                         <input type="checkbox" name="category[]" value="cleaning">
-                        <label for="cleaning">Cleaning Services</label>
+                        <label for="cleaning">Cleaning Services</label><br>
                         <input type="checkbox" name="category[]" value="pets">
                         <label for="pets">Pet Services</label>
                         <input type="checkbox" name="category[]" value="transportation">
@@ -324,6 +325,7 @@
             </div>
         </form>
     </div>
+    </main>
     <div id="footer">
       <p>2024 RPI Marketplace. All rights reserved.</p>
    </div>
