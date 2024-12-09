@@ -176,7 +176,7 @@
          <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
          <button class="headerbutton" alt="Create Listing Button" onclick="window.location.href='../listingform/index.php'">Create Listing</button>
          <button class="headerbutton" alt="Profile Page Button" onclick="window.location.href='../profile/profile.php'">Profile</button>
-         <button class="headerbutton" alt="Login Button" onclick="window.location.href='..login/login.php' "> Login</button>
+         <button class="headerbutton" alt="Login Button" onclick="window.location.href='../login/login.php' "> Login</button>
       </div>
       <script src="../main.js"></script>
    </div>
