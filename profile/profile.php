@@ -18,7 +18,6 @@ if ($conn->connect_error) {
 
 if (!isset($_SESSION['id'])) {
     echo "User is not logged in.";
-    $userId=1; // For testing purposes; in production remove this fallback
 } else {
     $userId = $_SESSION['id']; 
 }
@@ -32,11 +31,18 @@ $resultUser = $stmtUser->get_result();
 $user = $resultUser->fetch_assoc();
 
 // Fetch listings for the user
-$sqlListings = "SELECT * FROM listingData WHERE user_id = ?";
+$sqlListings = "SELECT * FROM listingData WHERE UserId = ?";
 $stmtListings = $conn->prepare($sqlListings);
 $stmtListings->bind_param("i", $userId);
 $stmtListings->execute();
 $listings = $stmtListings->get_result();
+
+// Fetch services for the user
+$sqlServices = "SELECT * FROM servicesData WHERE UserId = ?";
+$stmtServices = $conn->prepare($sqlServices);
+$stmtServices->bind_param("i", $userId);
+$stmtServices->execute();
+$services = $stmtServices->get_result();
 
 // Fetch auctions for the user
 $sqlAuctions = "
@@ -54,7 +60,7 @@ $sqlGiveaways = "
     SELECT gd.* 
     FROM giveawayData gd
     INNER JOIN giveawayEntreesData ge ON gd.giveaway_id = ge.giveaway_id
-    WHERE ge.Name = (
+    WHERE ge.name = (
         SELECT first_name 
         FROM users 
         WHERE UserId = ?
@@ -114,6 +120,24 @@ $conn->close();
         </section>
 
         <section>
+            <h2>Your Services</h2>
+            <div class="scrollable-row">
+                <?php foreach ($services as $service): ?>
+                    <div class="card">
+                        <img src="<?php echo htmlspecialchars($service['image_url']); ?>" class="cardImg">
+                        <strong><?php echo htmlspecialchars($service['Name']); ?></strong>
+                        <p><?php echo htmlspecialchars($service['Description']); ?></p>
+                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this service?');">
+                            <input type="hidden" name="type" value="service">
+                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($service['ServiceId']); ?>">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <section>
             <h2>Your Giveaways</h2>
             <div class="scrollable-row">
                 <?php foreach ($giveaways as $giveaway): ?>
@@ -138,7 +162,7 @@ $conn->close();
                     <div class="card">
                         <img src="<?php echo htmlspecialchars($auction['image_url']); ?>" class="cardImg">
                         <strong><?php echo htmlspecialchars($auction['title']); ?></strong>
-                        <p>Starting Bid: <?php echo htmlspecialchars($auction['description']); ?></p>
+                        <p><?php echo htmlspecialchars($auction['description']); ?></p>
                         <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this auction?');">
                             <input type="hidden" name="type" value="auction">
                             <input type="hidden" name="id" value="<?php echo htmlspecialchars($auction['id']); ?>">
