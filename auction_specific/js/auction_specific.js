@@ -32,6 +32,7 @@ function fetchAuctionDetails(auctionId) {
            setPreviousBidders(data.bidders);
        } else {
            // Show error message if auction not found
+           document.getElementById('error-message').textContent = 'Error fetching auction: ' + data.message;
            document.getElementById('error-message').style.display = 'block';
        }
    })
