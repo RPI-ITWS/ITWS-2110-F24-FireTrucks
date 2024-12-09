@@ -63,10 +63,10 @@ if (!$resultGiveaways) {
       <div id="header-buttons">
          <?php
             if (isset($_SESSION['id'])) {
-               echo '<button class="headerbutton" alt="Goods Page Button" onclick="window.location.href=\'./goods/index.html\'">Goods</button>'
-               echo '<button class="headerbutton" alt="Services Page Button" onclick="window.location.href=\'./services/index.html\'">Services</button>'
-               echo '<button class="headerbutton" alt="Create Listing Button" onclick="window.location.href=\'./listingform/index.php\'">Create Listing</button>'
-               echo '<button class="headerbutton" alt="Profile Page Button" onclick="window.location.href=\'./profile/profile.php\'">Profile</button>'
+               echo '<button class="headerbutton" alt="Goods Page Button" onclick="window.location.href=\'./goods/index.html\'">Goods</button>';
+               echo '<button class="headerbutton" alt="Services Page Button" onclick="window.location.href=\'./services/index.html\'">Services</button>';
+               echo '<button class="headerbutton" alt="Create Listing Button" onclick="window.location.href=\'./listingform/index.php\'">Create Listing</button>';
+               echo '<button class="headerbutton" alt="Profile Page Button" onclick="window.location.href=\'./profile/profile.php\'">Profile</button>';
                echo '<button class="headerbutton" alt="Logout Button" onclick="window.location.href=\'./login/logout.php\' ">Logout</button>';
             }
             else {
