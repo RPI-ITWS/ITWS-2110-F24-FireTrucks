@@ -13,7 +13,9 @@ if (isset($_GET['token'])) {
             mysqli_stmt_store_result($stmt);
 
             if (mysqli_stmt_num_rows($stmt) == 1) {
-                // Token is valid, update email_verified
+                // Token is valid, proceed with the update
+                mysqli_stmt_close($stmt); // Close the select statement before proceeding
+
                 $update_sql = "UPDATE users SET email_verified = 1, verification_token = NULL WHERE verification_token = ?";
                 if ($update_stmt = mysqli_prepare($conn, $update_sql)) {
                     mysqli_stmt_bind_param($update_stmt, "s", $token);
@@ -22,6 +24,7 @@ if (isset($_GET['token'])) {
                     } else {
                         echo "Error updating verification status. Please try again later.";
                     }
+                    mysqli_stmt_close($update_stmt); // Close the update statement
                 }
             } else {
                 echo "Invalid or expired verification token.";
@@ -30,7 +33,7 @@ if (isset($_GET['token'])) {
             echo "Database error. Please try again later.";
         }
 
-        mysqli_stmt_close($stmt);
+        mysqli_stmt_close($stmt); // Ensure the select statement is closed
     }
 } else {
     echo "No verification token provided.";
