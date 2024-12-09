@@ -16,6 +16,7 @@ if ($conn->connect_error) {
 
 if (!isset($_SESSION['id'])) {
     echo "User is not logged in.";
+    header("location: ../login/login.php");
     exit;
 } 
 
@@ -38,8 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmtDel->bind_param("i", $id);
             $stmtDel->execute();
             echo "Listing removed successfully.";
+            header("location: profile.php");
+            exit;
         } else {
             echo "You do not have permission to remove this listing.";
+            header("location: profile.php");
+            exit;
         }
     } elseif ($type === 'service') {
         $sqlCheck = "SELECT * FROM servicesData WHERE ServiceId = ? AND UserId = ?";
@@ -54,8 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmtDel->bind_param("i", $id);
             $stmtDel->execute();
             echo "Service removed successfully.";
+            header("location: profile.php");
+            exit;
         } else {
             echo "You do not have permission to remove this service.";
+            header("location: profile.php");
+            exit;
         }
     } elseif ($type === 'auction') {
         $sqlCheck = "
@@ -74,8 +83,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmtDel->bind_param("i", $id);
             $stmtDel->execute();
             echo "Auction removed successfully.";
+            header("location: profile.php");
+            exit;
         } else {
             echo "You do not have permission to remove this auction.";
+            header("location: profile.php");
+            exit;
         }
     } elseif ($type === 'giveaway') {    
         $sqlCheck = "
@@ -101,14 +114,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmtEntries->execute();
 
             echo "Giveaway removed successfully.";
+            header("location: profile.php");
+            exit;
         } else {
             echo "You do not have permission to remove this giveaway.";
+            header("location: profile.php");
+            exit;
         }
     } else {
         echo "Invalid type.";
+        header("location: profile.php");
+        exit;
     }
 } else {
     echo "Invalid request method.";
+    header("location: profile.php");
+    exit;
 }
 
 $conn->close();
