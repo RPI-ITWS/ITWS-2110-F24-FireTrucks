@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body> 
     <!-- Website Header -->
     <div id="header">
-      <img src="./images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
+      <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
       <div id="header-buttons">
          <?php
             if (isset($_SESSION['id'])) {
