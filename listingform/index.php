@@ -133,7 +133,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I understand that I can't change my posting.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Auction</button>
