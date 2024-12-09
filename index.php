@@ -61,10 +61,6 @@ if (!$resultGiveaways) {
    <div id="header">
       <img src="../images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='../index.php'">
       <div id="header-buttons">
-         <button class="headerbutton" alt="Goods Page Button" onclick="window.location.href='./goods/index.html'">Goods</button>
-         <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='./services/index.html'">Services</button>
-         <button class="headerbutton" alt="Create Listing Button" onclick="window.location.href='./listingform/index.php'">Create Listing</button>
-         <button class="headerbutton" alt="Profile Page Button" onclick="window.location.href='./profile/profile.php'">Profile</button>
          <?php
             if (isset($_SESSION['id'])) {
                echo '<button class="headerbutton" alt="Logout Button" onclick="window.location.href=\'../login/logout.php\' ">Logout</button>';
