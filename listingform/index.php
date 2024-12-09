@@ -133,7 +133,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge and assume full responsibilitiy for the transaction.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Auction</button>
@@ -200,7 +200,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge and assume full responsibilitiy for the transaction.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Giveaway</button>
@@ -267,7 +267,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge and assume full responsibilitiy for the transaction.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Good</button>
@@ -318,7 +318,7 @@
             <input type="tel" placeholder="format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge and assume full responsibilitiy for the transaction.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Service</button>
