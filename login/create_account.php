@@ -103,10 +103,9 @@
             $sql = "INSERT INTO users (first_name, last_name, phone_number, email, password, verification_token) VALUES (?, ?, ?, ?, ?, ?)";
             
             if ($stmt = mysqli_prepare($conn, $sql)) {
-                mysqli_stmt_bind_param($stmt, "ssssss", $param_first_name, $param_last_name, $param_phone_number, $param_email, $param_password, $param_verification_token);
-                
                 $param_verification_token = $verification_token;
-                
+                mysqli_stmt_bind_param($stmt, "ssssss", $param_first_name, $param_last_name, $param_phone_number, $param_email, $param_password, $param_verification_token);
+
                 // Set parameters
                 $param_first_name = $first_name;
                 $param_last_name = $last_name;
@@ -126,7 +125,6 @@
                         "text/html",
                         "<h1>Welcome, $param_first_name!</h1>
                         <p>Thank you for signing up. Please verify your email address by clicking the link below:</p>
-                        <p>Please check your junk mail and allow some time for the email to be sent.<\p>
                         <a href='$verification_link'>Verify Email</a>"
                 );
 
