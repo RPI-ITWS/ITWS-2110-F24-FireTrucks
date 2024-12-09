@@ -86,3 +86,34 @@ body{
    cursor: pointer;
    background-color: rgb(184, 184, 184);
 }
+/* The following is kept seperate but added on just in case other pages may not like the styling added. */
+.featuredListings {
+   display: flex;
+   overflow-x: auto;
+   gap: 20px;
+   padding-bottom: 10px;
+   scroll-snap-type: x mandatory;
+   width: auto !important;
+}
+
+.listing {
+   flex: 0 0 auto;
+   overflow: hidden;
+   box-sizing: border-box;
+   scroll-snap-align: start;
+}
+
+.listingText {
+   height: auto !important; 
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   white-space: normal;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+
+.listingTitle, .listingDescription, .price {
+   overflow-wrap: break-word;
+   white-space: normal;
+}

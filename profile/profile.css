@@ -36,37 +36,51 @@ h2 {
     overflow-x: auto;
     padding: 10px 0; 
     scroll-snap-type: x mandatory; 
+    gap: 20px; 
 }
 
 .card {
-    min-width: 200px; 
-    margin-right: 10px;
+    min-width: 250px; 
+    margin: 0;
     padding: 15px;
     border: 1px solid #ddd; 
     border-radius: 5px;
     background: #fafafa;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); 
     scroll-snap-align: start; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.cardImg{
-    width: 500px;
-    height: 500px;
+.cardImg {
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
- }
-
-.card:last-child {
-    margin-right: 0; 
+    margin-bottom: 10px; 
 }
 
 strong {
     display: block; 
     font-size: 1.1em; 
     color: #555; 
+    margin-bottom: 8px;
 }
 
 .card p {
     font-size: 0.9em; 
     color: #666; 
+    margin-bottom: 8px;
+    word-wrap: break-word; 
+}
+
+.card {
+    flex-shrink: 0;
+
+}
+
+.card {
+    overflow: hidden;
+    box-sizing: border-box;
 }

@@ -80,7 +80,6 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($user['first_name']); ?> <?php echo htmlspecialchars($user['last_name']); ?>'s Profile</title>
-    <h3> Email: <?php echo htmlspecialchars($user['email']); ?></h3>
     <link rel="stylesheet" href="profile.css"> 
     <link rel="stylesheet" href="../main.css">
 </head>
@@ -99,7 +98,8 @@ $conn->close();
    </div>
    <main>
     <div class="head-container">
-        <h1><?php echo htmlspecialchars($user['email']); ?>'s Profile</h1>
+        <h1><?php echo htmlspecialchars($user['first_name']); ?> <?php echo htmlspecialchars($user['last_name']); ?>'s Profile</h1>
+        <h3> Email: <?php echo htmlspecialchars($user['email']); ?></h3>
     </div>
     <div class="container">
         <section>
