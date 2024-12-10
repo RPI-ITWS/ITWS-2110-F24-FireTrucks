@@ -85,7 +85,7 @@ body {
 
 .listingImg {
    width: 100%;
-   height: 200px;
+   height: 300px;
    object-fit: cover;
 }
 
@@ -98,30 +98,36 @@ body {
 }
 
 .listingTitle {
+   margin: 10px 0 5px 0;
    font-size: 18px;
    font-weight: bold;
    color: var(--DarkGray);
 }
 
 .listingDescription {
-   font-size: 14px;
    color: #666;
-   margin: 5px 0;
+   height: 60px;
+   margin-top: 0;
 }
 
 .price {
-   font-size: 16px;
-   font-weight: bold;
-   color: var(--DarkRed100);
+   display: inline-block;
+   margin: 4px 0 0 0;
 }
 
-.CTAbutton {
-   align-self: start;
+.CTAbutton{
+   display: inline;
    background-color: var(--DarkRed100);
    color: white;
    font-size: 14px;
+   height: 28px;
+   float: right;
    border: none;
    border-radius: 5px;
-   padding: 5px 10px;
+   margin-bottom: 10px;
+}
+
+.CTAbutton:hover{
    cursor: pointer;
+   background-color: var(--DarkRed050);
 }

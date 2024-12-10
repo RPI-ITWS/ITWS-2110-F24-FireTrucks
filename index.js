@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
        const price = document.createElement("h4");
        price.classList.add("price");
-       price.textContent = item.Price ? `$${item.Price}` : item.starting_bid ? `Starting Bid: $${item.starting_bid}` : 'Free';
+       price.textContent = item.Price ? `Price: $${item.Price}` : item.starting_bid ? `Current Bid: $${item.starting_bid}` : '';
  
        const button = document.createElement("button");
        button.classList.add("CTAbutton");
