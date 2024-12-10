@@ -73,7 +73,7 @@ body{
 
 .CTAbutton{
    display: inline;
-   color: var(--DarkGray);
+   color: var(--DarkRed100);
    font-size: 14px;
    height: 28px;
    font-weight: bold;
@@ -84,7 +84,7 @@ body{
 
 .CTAbutton:hover{
    cursor: pointer;
-   background-color: rgb(184, 184, 184);
+   background-color: var(--DarkRed050);
 }
 /* The following is kept seperate but added on just in case other pages may not like the styling added. */
 .featuredListings {

@@ -79,7 +79,6 @@ if (!$resultGiveaways) {
    <div class="listingSection">
       <div class="listingHeading">
          <h2 class="listingSectionName">Featured Listings</h2>
-         <a href="" class="viewAll">View All</a>
       </div>
       <div class="featuredListings">
          <?php while ($row = $resultListings->fetch_assoc()) { ?>
@@ -109,7 +108,6 @@ if (!$resultGiveaways) {
    <div class="listingSection">
       <div class="listingHeading">
          <h2 class="listingSectionName">Active Auctions</h2>
-         <a href="" class="viewAll">View All</a>
       </div>
       <div class="featuredListings">
          <?php while ($row = $resultAuctions->fetch_assoc()) { ?>
@@ -139,7 +137,6 @@ if (!$resultGiveaways) {
    <div class="listingSection">
       <div class="listingHeading">
          <h2 class="listingSectionName">Giveaways</h2>
-         <a href="" class="viewAll">View All</a>
       </div>
       <div class="featuredListings">
          <?php while ($row = $resultGiveaways->fetch_assoc()) { ?>
