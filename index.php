@@ -12,12 +12,11 @@ error_reporting(E_ALL);
    <title>Home Page</title>
    <link rel="stylesheet" href="./main.css">
    <link rel="stylesheet" href="./index.css">
-   <script>
-      var isUserLoggedIn = <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>;
-   </script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <script src="./index.js" defer></script>
 </head>
 <body>
-   <!-- Header -->
+   <!-- Website Header -->
    <div id="header">
       <img src="./images/logo.png" alt="RPI Marketplace Logo" class="logo" onclick="window.location.href='./index.php'">
       <div id="header-buttons">
@@ -35,12 +34,22 @@ error_reporting(E_ALL);
 
    <!-- Main Content -->
    <main>
+      <!-- Search Bar -->
+      <div id="search">
+         <input id="searchInput" type="text" placeholder="Search...">
+         <button id="searchButton" onclick="fetchContent()">
+            <i class="fas fa-search"></i>
+         </button>
+      </div>
+
       <!-- Featured Listings -->
       <div class="listingSection">
          <div class="listingHeading">
             <h2 class="listingSectionName">Featured Listings</h2>
          </div>
-         <div class="featuredListings" id="featuredListingsContainer"></div>
+         <div class="featuredListings" id="featuredListingsContainer">
+            <!-- LISTINGS WILL BE ADDED HERE -->
+         </div>
       </div>
 
       <!-- Active Auctions -->
@@ -48,7 +57,9 @@ error_reporting(E_ALL);
          <div class="listingHeading">
             <h2 class="listingSectionName">Active Auctions</h2>
          </div>
-         <div class="featuredListings" id="activeAuctionsContainer"></div>
+         <div class="featuredListings" id="activeAuctionsContainer">
+            <!-- AUCTIONS WILL BE ADDED HERE -->
+         </div>
       </div>
 
       <!-- Giveaways -->
@@ -56,7 +67,9 @@ error_reporting(E_ALL);
          <div class="listingHeading">
             <h2 class="listingSectionName">Giveaways</h2>
          </div>
-         <div class="featuredListings" id="giveawaysContainer"></div>
+         <div class="featuredListings" id="giveawaysContainer">
+            <!-- GIVEAWAYS WILL BE ADDED HERE -->
+         </div>
       </div>
    </main>
 
@@ -64,7 +77,5 @@ error_reporting(E_ALL);
    <div id="footer">
       <p>2024 RPI Marketplace. All rights reserved.</p>
    </div>
-
-   <script src="./index.js"></script>
 </body>
 </html>
