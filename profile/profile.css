@@ -34,64 +34,92 @@ h2 {
 
 .scrollable-row {
     display: flex;
+    align-items: flex-end;
     overflow-x: auto;
     padding: 10px 0;
     scroll-snap-type: x mandatory;
     gap: 20px;
 }
 
+@keyframes fade-shadow {
+    0% {
+        box-shadow: 0 0 5px 0 rgb(188, 188, 188);
+    }
+    100% {
+        box-shadow: 0 0 10px 0 rgb(125, 125, 125);
+    }
+}
+
 .card {
-    flex: 0 0 250px; 
-    height: 350px; 
-    margin: 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #fafafa;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between; 
+    width: 300px;         
+    height: 400px;        
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+    background: #fff;
+    margin: 10px 20px;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.cardImg {
-    border-radius: 5px;
-    width: 100%;
-    height: 180px; 
-    object-fit: cover;
-    margin-bottom: 10px;
+.card:hover {
+    animation: fade-shadow 0.25s forwards;
 }
 
-strong {
-    display: block;
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 8px;
+.cardImg {
+    width: 100%;
+    height: 200px;            
+    object-fit: cover;       
+    object-position: center;  
+    border-radius: 0;
+}
+
+.card strong {
+    font-size: 18px; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-align: center;
+    display: block;
 }
 
 .card p {
-    font-size: 0.9em;
+    font-size: 14px;
     color: #666;
+    margin: 5px 0;
+    line-height: 1.2;
+    max-height: 3em;          
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
-    margin-bottom: 8px;
     word-wrap: break-word;
 }
 
-button {
+.card .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.card .button-container button {
     background-color: var(--DarkRed100);
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 8px 15px;
+    padding: 5px 10px;
+    font-size: 14px;
     cursor: pointer;
-    font-size: 0.9em;
 }
 
-button:hover {
+.card .button-container button:hover {
     background-color: var(--DarkRed050);
 }

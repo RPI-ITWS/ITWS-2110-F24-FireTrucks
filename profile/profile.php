@@ -18,6 +18,7 @@ if ($conn->connect_error) {
 
 if (!isset($_SESSION['id'])) {
     echo "User is not logged in.";
+    exit;
 } else {
     $userId = $_SESSION['id']; 
 }
@@ -87,7 +88,7 @@ $conn->close();
          <button class="headerbutton" alt="Services Page Button" onclick="window.location.href='../services/index.html'">Services</button>
          <button class="headerbutton" alt="Create Listing Button" onclick="window.location.href='../listingform/index.php'">Create Listing</button>
          <button class="headerbutton" alt="Profile Page Button" onclick="window.location.href='../profile/profile.php'">Profile</button>
-         <button class="headerbutton" alt="Logout Button" onclick="window.location.href='../login/logout.php' "> Logout</button>
+         <button class="headerbutton" alt="Logout Button" onclick="window.location.href='../login/logout.php'">Logout</button>
       </div>
       <script src="../main.js"></script>
    </div>
@@ -97,6 +98,8 @@ $conn->close();
         <h3> Email: <?php echo htmlspecialchars($user['email']); ?></h3>
     </div>
     <div class="container">
+
+        <!-- Listings Section -->
         <section>
             <h2>Your Listings</h2>
             <div class="scrollable-row">
@@ -105,70 +108,85 @@ $conn->close();
                         <img src="<?php echo htmlspecialchars($listing['image_url']); ?>" class="cardImg" alt="Listing Image">
                         <strong><?php echo htmlspecialchars($listing['Name']); ?></strong>
                         <p><?php echo htmlspecialchars($listing['Description']); ?></p>
-                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this listing?');">
-                            <input type="hidden" name="type" value="listing">
-                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($listing['ListingId']); ?>">
-                            <button type="submit">Remove</button>
-                        </form>
+                        <div class="button-container">
+                            <button type="button" onclick="window.location.href='../listing_specific/index.html?id=<?php echo $listing['ListingId']; ?>'">View</button>
+                            <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this listing?');">
+                                <input type="hidden" name="type" value="listing">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($listing['ListingId']); ?>">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </section>
 
-
+        <!-- Services Section -->
         <section>
             <h2>Your Services</h2>
             <div class="scrollable-row">
                 <?php foreach ($services as $service): ?>
                     <div class="card">
-                        <img src="<?php echo htmlspecialchars($service['image_url']); ?>" class="cardImg">
+                        <img src="<?php echo htmlspecialchars($service['image_url']); ?>" class="cardImg" alt="Service Image">
                         <strong><?php echo htmlspecialchars($service['Name']); ?></strong>
                         <p><?php echo htmlspecialchars($service['Description']); ?></p>
-                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this service?');">
-                            <input type="hidden" name="type" value="service">
-                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($service['ServiceId']); ?>">
-                            <button type="submit">Remove</button>
-                        </form>
+                        <div class="button-container">
+                            <button type="button" onclick="window.location.href='../service_specific/index.html?id=<?php echo $service['ServiceId']; ?>'">View</button>
+                            <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this service?');">
+                                <input type="hidden" name="type" value="service">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($service['ServiceId']); ?>">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </section>
 
+        <!-- Giveaways Section -->
         <section>
             <h2>Your Giveaways</h2>
             <div class="scrollable-row">
                 <?php foreach ($giveaways as $giveaway): ?>
                     <div class="card">
-                        <img src="<?php echo htmlspecialchars($giveaway['image_url']); ?>" class="cardImg">
+                        <img src="<?php echo htmlspecialchars($giveaway['image_url']); ?>" class="cardImg" alt="Giveaway Image">
                         <strong><?php echo htmlspecialchars($giveaway['name']); ?></strong>
                         <p><?php echo htmlspecialchars($giveaway['description']); ?></p>
-                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this giveaway?');">
-                            <input type="hidden" name="type" value="giveaway">
-                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($giveaway['giveaway_id']); ?>">
-                            <button type="submit">Remove</button>
-                        </form>
+                        <div class="button-container">
+                            <button type="button" onclick="window.location.href='../giveaway_specific/index.html?id=<?php echo $giveaway['giveaway_id']; ?>'">View</button>
+                            <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this giveaway?');">
+                                <input type="hidden" name="type" value="giveaway">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($giveaway['giveaway_id']); ?>">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </section>
 
+        <!-- Auctions Section -->
         <section>
             <h2>Your Auctions</h2>
             <div class="scrollable-row">
                 <?php foreach ($auctions as $auction): ?>
                     <div class="card">
-                        <img src="<?php echo htmlspecialchars($auction['image_url']); ?>" class="cardImg">
+                        <img src="<?php echo htmlspecialchars($auction['image_url']); ?>" class="cardImg" alt="Auction Image">
                         <strong><?php echo htmlspecialchars($auction['title']); ?></strong>
                         <p><?php echo htmlspecialchars($auction['description']); ?></p>
-                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this auction?');">
-                            <input type="hidden" name="type" value="auction">
-                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($auction['id']); ?>">
-                            <button type="submit">Remove</button>
-                        </form>
+                        <div class="button-container">
+                            <button type="button" onclick="window.location.href='../auction_specific/index.html?id=<?php echo $auction['id']; ?>'">View</button>
+                            <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this auction?');">
+                                <input type="hidden" name="type" value="auction">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($auction['id']); ?>">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </section>
+
     </div>
     </main>
     <div id="footer">
