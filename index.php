@@ -13,6 +13,10 @@ error_reporting(E_ALL);
    <link rel="stylesheet" href="./main.css">
    <link rel="stylesheet" href="./index.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <script>
+       // Define a global JavaScript variable `loggedIn` based on PHP session
+       const loggedIn = <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>;
+   </script>
    <script src="./index.js" defer></script>
 </head>
 <body>
@@ -34,7 +38,6 @@ error_reporting(E_ALL);
 
    <!-- Main Content -->
    <main>
-
       <!-- Featured Listings -->
       <div class="listingSection">
          <div class="listingHeading">
