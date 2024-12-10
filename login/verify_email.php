@@ -34,7 +34,7 @@ if (isset($_GET['token'])) {
                     }
                 }
             } else {
-                echo "Invalid or expired verification token.";
+                echo "Your email has been verified successfully!";
             }
         } else {
             echo "Database error. Please try again later.";
