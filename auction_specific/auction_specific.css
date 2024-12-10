@@ -60,7 +60,7 @@
    color: var(--DarkRed100);
 }
 
-.current-bid .bid-amount, .time-left .time {
+.current-bid .bid-amount, .time-left .time .seller {
    font-size: 1.25rem; 
    font-weight: bold;
    color: var(--DarkRed100);
