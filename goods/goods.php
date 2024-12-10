@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 // Goods data
 $data = [];
-$sql = "SELECT * FROM `listingData`"; // Ensure the table name matches exactly
+$sql = "SELECT * FROM `listingData` ORDER BY ListingId DESC"; // Ensure the table name matches exactly
 $result = $conn->query($sql);
 
 if ($result === false) {
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
 }
 
 // Auction data
-$sql = "SELECT * FROM `auctionsData` WHERE time_end > CURRENT_TIMESTAMP()"; // Ensure the table name matches exactly
+$sql = "SELECT * FROM `auctionsData` WHERE time_end > CURRENT_TIMESTAMP() ORDER BY id DESC"; // Ensure the table name matches exactly
 $result = $conn->query($sql);
 
 if ($result === false) {
@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
 }
 
 // Giveaway data
-$sql = "SELECT * FROM `giveawayData` WHERE time_end > CURRENT_TIMESTAMP()"; // Ensure the table name matches exactly
+$sql = "SELECT * FROM `giveawayData` WHERE time_end > CURRENT_TIMESTAMP() ORDER BY giveaway_id DESC"; // Ensure the table name matches exactly
 $result = $conn->query($sql);
 
 if ($result === false) {
