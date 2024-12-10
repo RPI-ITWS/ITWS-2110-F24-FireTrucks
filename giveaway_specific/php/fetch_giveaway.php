@@ -144,7 +144,8 @@ if ($giveaway_result->num_rows > 0) {
         'image_url' => $giveaway['image_url'],
         'participantsNum' => $unique_participants,  
         'time_left' => $time_left,
-        'seller' => $giveaway['seller'],
+        'sellerName' => $giveaway['giveaway host'],
+        'sellerEmail' => $giveaway['email'],
         'winnerid' => $giveaway['winnerId'],
         'winner_first_name' => $winner_first_name,
         'winner_last_name' => $winner_last_name

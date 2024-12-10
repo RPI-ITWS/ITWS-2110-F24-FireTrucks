@@ -82,39 +82,39 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Item for Auction" id="title" name="title" required><br>
             <label for="category">Category</label><br>
-                <input type="checkbox" name="category[]" value="textbooks">
+                <input type="checkbox" name="category[]" value="Textbooks" id="textbooks">
                 <label for="textbooks">Textbooks</label>
-                <input type="checkbox" name="category[]" value="electronics">
+                <input type="checkbox" name="category[]" value="Electronics" id="electronics">
                 <label for="electronics">Electronics</label>
-                <input type="checkbox" name="category[]" value="clothes">
+                <input type="checkbox" name="category[]" value="Clothes" id="clothes">
                 <label for="clothes">Clothes</label>
-                <input type="checkbox" name="category[]" value="vehicles">
+                <input type="checkbox" name="category[]" value="Vehicles" id="vehicles">
                 <label for="vehicles">Vehicles</label><br>
-                <input type="checkbox" name="category[]" value="furniture">
+                <input type="checkbox" name="category[]" value="Furniture" id="furniture">
                 <label for="furniture">Furniture</label>
-                <input type="checkbox" name="category[]" value="games">
+                <input type="checkbox" name="category[]" value="Games" id="games">
                 <label for="games">Games</label>
-                <input type="checkbox" name="category[]" value="appliances">
+                <input type="checkbox" name="category[]" value="Appliances" id="appliances">
                 <label for="appliances">Appliances</label>
-                <input type="checkbox" name="category[]" value="sportsEquip">
+                <input type="checkbox" name="category[]" value="Sports Equipment" id="sportsEquip">
                 <label for="sportsEquip">Sports Equipment</label><br>
-                <input type="checkbox" name="category[]" value="jewelry">
+                <input type="checkbox" name="category[]" value="Jewelry" id="jewelry">
                 <label for="jewelry">Jewelry</label>
-                <input type="checkbox" name="category[]" value="art">
+                <input type="checkbox" name="category[]" value="Art" id="art">
                 <label for="art">Art</label>
-                <input type="checkbox" name="category[]" value="instruments">
+                <input type="checkbox" name="category[]" value="Instruments" id="instruments">
                 <label for="instruments">Instruments</label>
-                <input type="checkbox" name="category[]" value="antiques">
+                <input type="checkbox" name="category[]" value="Antiques" id="antiques">
                 <label for="antiques">Antiques</label><br>
-                <input type="checkbox" name="category[]" value="collectibles">
+                <input type="checkbox" name="category[]" value="Collectibles" id="collectibles">
                 <label for="collectibles">Collectibles</label>
-                <input type="checkbox" name="category[]" value="tickets">
+                <input type="checkbox" name="category[]" value="Tickets" id="tickets">
                 <label for="tickets">Tickets</label>
-                <input type="checkbox" name="category[]" value="toys">
+                <input type="checkbox" name="category[]" value="Toys" id="toys">
                 <label for="toys">Toys</label>
-                <input type="checkbox" name="category[]" value="tools">
+                <input type="checkbox" name="category[]" value="Tools" id="tools">
                 <label for="tools">Tools</label>
-                <input type="checkbox" name="category[]" value="miscellaneous">
+                <input type="checkbox" name="category[]" value="Miscellaneous" id="miscellaneous">
                 <label for="miscellaneous">Miscellaneous</label><br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
@@ -133,7 +133,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Auction</button>
@@ -151,39 +151,39 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Giveaway Item" id="title" name="title"><br>
                 <label for="category">Category</label><br>
-                <input type="checkbox" name="category[]" value="textbooks">
+                <input type="checkbox" name="category[]" value="Textbooks" id="textbooks">
                 <label for="textbooks">Textbooks</label>
-                <input type="checkbox" name="category[]" value="electronics">
+                <input type="checkbox" name="category[]" value="Electronics" id="electronics">
                 <label for="electronics">Electronics</label>
-                <input type="checkbox" name="category[]" value="clothes">
+                <input type="checkbox" name="category[]" value="Clothes" id="clothes">
                 <label for="clothes">Clothes</label>
-                <input type="checkbox" name="category[]" value="vehicles">
+                <input type="checkbox" name="category[]" value="Vehicles" id="vehicles">
                 <label for="vehicles">Vehicles</label><br>
-                <input type="checkbox" name="category[]" value="furniture">
+                <input type="checkbox" name="category[]" value="Furniture" id="furniture">
                 <label for="furniture">Furniture</label>
-                <input type="checkbox" name="category[]" value="games">
+                <input type="checkbox" name="category[]" value="Games" id="games">
                 <label for="games">Games</label>
-                <input type="checkbox" name="category[]" value="appliances">
+                <input type="checkbox" name="category[]" value="Appliances" id="appliances">
                 <label for="appliances">Appliances</label>
-                <input type="checkbox" name="category[]" value="sportsEquip">
+                <input type="checkbox" name="category[]" value="Sports Equipment" id="sportsEquip">
                 <label for="sportsEquip">Sports Equipment</label><br>
-                <input type="checkbox" name="category[]" value="jewelry">
+                <input type="checkbox" name="category[]" value="Jewelry" id="jewelry">
                 <label for="jewelry">Jewelry</label>
-                <input type="checkbox" name="category[]" value="art">
+                <input type="checkbox" name="category[]" value="Art" id="art">
                 <label for="art">Art</label>
-                <input type="checkbox" name="category[]" value="instruments">
+                <input type="checkbox" name="category[]" value="Instruments" id="instruments">
                 <label for="instruments">Instruments</label>
-                <input type="checkbox" name="category[]" value="antiques">
+                <input type="checkbox" name="category[]" value="Antiques" id="antiques">
                 <label for="antiques">Antiques</label><br>
-                <input type="checkbox" name="category[]" value="collectibles">
+                <input type="checkbox" name="category[]" value="Collectibles" id="collectibles">
                 <label for="collectibles">Collectibles</label>
-                <input type="checkbox" name="category[]" value="tickets">
+                <input type="checkbox" name="category[]" value="Tickets" id="tickets">
                 <label for="tickets">Tickets</label>
-                <input type="checkbox" name="category[]" value="toys">
+                <input type="checkbox" name="category[]" value="Toys" id="toys">
                 <label for="toys">Toys</label>
-                <input type="checkbox" name="category[]" value="tools">
+                <input type="checkbox" name="category[]" value="Tools" id="tools">
                 <label for="tools">Tools</label>
-                <input type="checkbox" name="category[]" value="miscellaneous">
+                <input type="checkbox" name="category[]" value="Miscellaneous" id="miscellaneous">
                 <label for="miscellaneous">Miscellaneous</label><br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your giveaway" id="description" name="description" rows="4" cols="60"></textarea><br>
@@ -200,7 +200,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Giveaway</button>
@@ -218,39 +218,39 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Item for Sale" id="title" name="title"><br>
             <label for="category">Category</label><br>
-                    <input type="checkbox" name="category[]" value="textbooks">
+                    <input type="checkbox" name="category[]" value="Textbooks" id="textbooks">
                     <label for="textbooks">Textbooks</label>
-                    <input type="checkbox" name="category[]" value="electronics">
+                    <input type="checkbox" name="category[]" value="Electronics" id="electronics">
                     <label for="electronics">Electronics</label>
-                    <input type="checkbox" name="category[]" value="clothes">
+                    <input type="checkbox" name="category[]" value="Clothes" id="clothes">
                     <label for="clothes">Clothes</label>
-                    <input type="checkbox" name="category[]" value="vehicles">
+                    <input type="checkbox" name="category[]" value="Vehicles" id="vehicles">
                     <label for="vehicles">Vehicles</label><br>
-                    <input type="checkbox" name="category[]" value="furniture">
+                    <input type="checkbox" name="category[]" value="Furniture" id="furniture">
                     <label for="furniture">Furniture</label>
-                    <input type="checkbox" name="category[]" value="games">
+                    <input type="checkbox" name="category[]" value="Games" id="games">
                     <label for="games">Games</label>
-                    <input type="checkbox" name="category[]" value="appliances">
+                    <input type="checkbox" name="category[]" value="Appliances" id="appliances">
                     <label for="appliances">Appliances</label>
-                    <input type="checkbox" name="category[]" value="sportsEquip">
+                    <input type="checkbox" name="category[]" value="Sports Equipment" id="sportsEquip">
                     <label for="sportsEquip">Sports Equipment</label><br>
-                    <input type="checkbox" name="category[]" value="jewelry">
+                    <input type="checkbox" name="category[]" value="Jewelry" id="jewelry">
                     <label for="jewelry">Jewelry</label>
-                    <input type="checkbox" name="category[]" value="art">
+                    <input type="checkbox" name="category[]" value="Art" id="art">
                     <label for="art">Art</label>
-                    <input type="checkbox" name="category[]" value="instruments">
+                    <input type="checkbox" name="category[]" value="Instruments" id="instruments">
                     <label for="instruments">Instruments</label>
-                    <input type="checkbox" name="category[]" value="antiques">
+                    <input type="checkbox" name="category[]" value="Antiques" id="antiques">
                     <label for="antiques">Antiques</label><br>
-                    <input type="checkbox" name="category[]" value="collectibles">
+                    <input type="checkbox" name="category[]" value="Collectibles" id="collectibles">
                     <label for="collectibles">Collectibles</label>
-                    <input type="checkbox" name="category[]" value="tickets">
+                    <input type="checkbox" name="category[]" value="Tickets" id="tickets">
                     <label for="tickets">Tickets</label>
-                    <input type="checkbox" name="category[]" value="toys">
+                    <input type="checkbox" name="category[]" value="Toys" id="toys">
                     <label for="toys">Toys</label>
-                    <input type="checkbox" name="category[]" value="tools">
+                    <input type="checkbox" name="category[]" value="Tools" id="tools">
                     <label for="tools">Tools</label>
-                    <input type="checkbox" name="category[]" value="miscellaneous">
+                    <input type="checkbox" name="category[]" value="Miscellaneous" id="miscellaneous">
                     <label for="miscellaneous">Miscellaneous</label><br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
@@ -267,7 +267,7 @@
             <input type="tel" placeholder="use format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Good</button>
@@ -285,23 +285,23 @@
             <label for="title">Title</label><br>
             <input type="text" placeholder="Service Name" id="title" name="title"><br>
             <label for="category">Category</label><br>
-                        <input type="checkbox" name="category[]" value="tutoring">
+                        <input type="checkbox" name="category[]" value="Tutoring" id="tutoring">
                         <label for="tutoring">Tutoring</label>
-                        <input type="checkbox" name="category[]" value="editing">
+                        <input type="checkbox" name="category[]" value="Editing" id="editing">
                         <label for="writing">Writing Help & Editing</label>
-                        <input type="checkbox" name="category[]" value="techsupport">
+                        <input type="checkbox" name="category[]" value="Tech Support" id="techsupport">
                         <label for="techsupport">Tech Support</label><br>
-                        <input type="checkbox" name="category[]" value="photography">
+                        <input type="checkbox" name="category[]" value="Photography" id="photography">
                         <label for="photography">Photography or Videography</label>
-                        <input type="checkbox" name="category[]" value="moving">
+                        <input type="checkbox" name="category[]" value="Moving" id="moving">
                         <label for="moving">Moving Assistance</label>
-                        <input type="checkbox" name="category[]" value="cleaning">
+                        <input type="checkbox" name="category[]" value="Cleaning" id="cleaning">
                         <label for="cleaning">Cleaning Services</label><br>
-                        <input type="checkbox" name="category[]" value="pets">
+                        <input type="checkbox" name="category[]" value="Pets" id="pets">
                         <label for="pets">Pet Services</label>
-                        <input type="checkbox" name="category[]" value="transportation">
+                        <input type="checkbox" name="category[]" value="Transportation" id="transportation">
                         <label for="transportation">Transportation Services</label>
-                        <input type="checkbox" name="category[]" value="miscellaneous">
+                        <input type="checkbox" name="category[]" value="Miscellaneous" id="miscellaneous">
                         <label for="miscellaneous">Miscellaneous</label><br>
             <label for="description">Description</label><br>
             <textarea placeholder="Describe your item" id="description" name="description" rows="4" cols="60"></textarea><br>
@@ -318,7 +318,7 @@
             <input type="tel" placeholder="format: 518-100-001" id="phoneNum" name="phoneNum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <div class="agree">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">By submitting, I understand that I can't remove/change my posting.</label>
+                <label for="agreement">By submitting, I agree that the information provided is accurate to the best of my knowledge.</label>
             </div>
             <div class="buttoncontainer">
                 <button type="submit" id="post">Post Service</button>
