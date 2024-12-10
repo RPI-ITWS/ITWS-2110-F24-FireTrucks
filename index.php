@@ -42,15 +42,8 @@ if (!$resultGiveaways) {
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home Page</title>
-   <link rel="stylesheet" href="main.css">
-   <link rel="stylesheet" href="index.css">
-   <style>
-       .listingImg {
-           width: 200px; 
-           height: 200px;
-           object-fit: cover; 
-       }
-   </style>
+   <link rel="stylesheet" href="./main.css">
+   <link rel="stylesheet" href="./index.css">
 </head>
     
 <body> 
