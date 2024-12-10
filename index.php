@@ -34,13 +34,6 @@ error_reporting(E_ALL);
 
    <!-- Main Content -->
    <main>
-      <!-- Search Bar -->
-      <div id="search">
-         <input id="searchInput" type="text" placeholder="Search...">
-         <button id="searchButton" onclick="fetchContent()">
-            <i class="fas fa-search"></i>
-         </button>
-      </div>
 
       <!-- Featured Listings -->
       <div class="listingSection">
