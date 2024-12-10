@@ -16,7 +16,8 @@ function fetchGiveawayDetails(giveawayId) {
          document.querySelector('#giveawayImage').src = data.image_url;
          document.querySelector('#itemTitle').textContent = data.title;
          document.querySelector('#itemDescription').textContent = data.description;
-         document.querySelector('.seller-name').textContent = data.seller;
+         document.querySelector('.seller-name').textContent = "Hosted By: " + data.sellerName;
+         document.querySelector('.seller-email').textContent = data.sellerEmail;
          document.querySelector('#winner').textContent = data.winner_first_name + " " + data.winner_last_name;
          if(data.time_left == 'Giveaway Over!') {
             document.querySelector('#winner-block').style.display = '';

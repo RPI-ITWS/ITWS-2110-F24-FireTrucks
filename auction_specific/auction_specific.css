@@ -48,13 +48,13 @@
 }
 
 /* Bid section */
-.current-bid, .time-left {
+.current-bid, .time-left .seller {
    display: flex;
    justify-content: space-between;
    margin-bottom: 0.5rem;
 }
 
-.current-bid p, .time-left p {
+.current-bid p, .time-left p, .seller p {
    margin: 0;
    font-size: 1rem; 
    color: var(--DarkRed100);
