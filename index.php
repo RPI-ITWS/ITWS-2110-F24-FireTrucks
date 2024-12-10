@@ -44,13 +44,6 @@ if (!$resultGiveaways) {
    <title>Home Page</title>
    <link rel="stylesheet" href="main.css">
    <link rel="stylesheet" href="index.css">
-   <style>
-       .listingImg {
-           width: 200px; 
-           height: 200px;
-           object-fit: cover; 
-       }
-   </style>
 </head>
     
 <body> 
