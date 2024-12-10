@@ -1,13 +1,9 @@
 <?php
-session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$servername = "localhost"; 
-$username = "phpmyadmin"; 
-$password = "Marketplace18"; 
-$dbname = "marketplace"; 
+header('Content-Type: application/json');
+$servername = "localhost";
+$username = "phpmyadmin";
+$password = "Marketplace18";
+$dbname = "marketplace";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,41 +11,24 @@ if ($conn->connect_error) {
     die(json_encode(['error' => 'Connection failed: ' . $conn->connect_error]));
 }
 
-// Fetch latest 5 listings
-$listingsData = [];
-$sqlListings = "SELECT * FROM listingData ORDER BY ListingId DESC LIMIT 5";
-$resultListings = $conn->query($sqlListings);
-if ($resultListings && $resultListings->num_rows > 0) {
-    while ($row = $resultListings->fetch_assoc()) {
-        $listingsData[] = $row;
-    }
-}
+$data = [
+    'listings' => [],
+    'auctions' => [],
+    'giveaways' => [],
+];
 
-// Fetch latest 5 auctions
-$auctionsData = [];
-$sqlAuctions = "SELECT * FROM auctionsData ORDER BY id DESC LIMIT 5";
-$resultAuctions = $conn->query($sqlAuctions);
-if ($resultAuctions && $resultAuctions->num_rows > 0) {
-    while ($row = $resultAuctions->fetch_assoc()) {
-        $auctionsData[] = $row;
-    }
-}
+// Fetch Listings
+$result = $conn->query("SELECT * FROM listingData ORDER BY ListingId DESC LIMIT 5");
+if ($result) $data['listings'] = $result->fetch_all(MYSQLI_ASSOC);
 
-// Fetch latest 5 giveaways
-$giveawaysData = [];
-$sqlGiveaways = "SELECT * FROM giveawayData ORDER BY giveaway_id DESC LIMIT 5";
-$resultGiveaways = $conn->query($sqlGiveaways);
-if ($resultGiveaways && $resultGiveaways->num_rows > 0) {
-    while ($row = $resultGiveaways->fetch_assoc()) {
-        $giveawaysData[] = $row;
-    }
-}
+// Fetch Auctions
+$result = $conn->query("SELECT * FROM auctionsData ORDER BY id DESC LIMIT 5");
+if ($result) $data['auctions'] = $result->fetch_all(MYSQLI_ASSOC);
 
+// Fetch Giveaways
+$result = $conn->query("SELECT * FROM giveawayData ORDER BY giveaway_id DESC LIMIT 5");
+if ($result) $data['giveaways'] = $result->fetch_all(MYSQLI_ASSOC);
+
+echo json_encode($data);
 $conn->close();
-
-// Combine the data into a single JSON object
-echo json_encode([
-    'listings' => $listingsData,
-    'auctions' => $auctionsData,
-    'giveaways' => $giveawaysData
-]);
+?>
