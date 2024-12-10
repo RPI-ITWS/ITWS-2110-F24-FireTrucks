@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 // Goods data
 $data = [];
-$sql = "SELECT * FROM `servicesData`"; // Ensure the table name matches exactly
+$sql = "SELECT * FROM `servicesData` ORDER BY ServiceId DESC"; // Ensure the table name matches exactly
 $result = $conn->query($sql);
 
 if ($result === false) {
