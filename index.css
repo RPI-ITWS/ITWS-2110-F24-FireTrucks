@@ -130,12 +130,6 @@ body {
    margin-bottom: 10px;
 }
 
-.CTAbutton:hover{
-   cursor: pointer;
-   align-self: start;
-   margin-top: auto; 
-}
-
 .CTAbutton:hover {
    background-color: var(--DarkRed050);
    color: white;
