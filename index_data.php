@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json');
+
 $servername = "localhost";
 $username = "phpmyadmin";
 $password = "Marketplace18";
@@ -18,15 +19,15 @@ $data = [
 ];
 
 // Fetch Listings
-$result = $conn->query("SELECT * FROM listingData ORDER BY ListingId DESC LIMIT 5");
+$result = $conn->query("SELECT * FROM listingData ORDER BY ListingId DESC LIMIT 4");
 if ($result) $data['listings'] = $result->fetch_all(MYSQLI_ASSOC);
 
 // Fetch Auctions
-$result = $conn->query("SELECT * FROM auctionsData ORDER BY id DESC LIMIT 5");
+$result = $conn->query("SELECT * FROM auctionsData ORDER BY id DESC LIMIT 4");
 if ($result) $data['auctions'] = $result->fetch_all(MYSQLI_ASSOC);
 
 // Fetch Giveaways
-$result = $conn->query("SELECT * FROM giveawayData ORDER BY giveaway_id DESC LIMIT 5");
+$result = $conn->query("SELECT * FROM giveawayData ORDER BY giveaway_id DESC LIMIT 4");
 if ($result) $data['giveaways'] = $result->fetch_all(MYSQLI_ASSOC);
 
 echo json_encode($data);
