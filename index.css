@@ -39,27 +39,12 @@ body {
 
 .featuredListings {
    display: flex;
+   align-items: flex-end; 
    overflow-x: auto;
    gap: 20px;
    padding-bottom: 10px;
    scroll-snap-type: x mandatory;
    width: 100%;
-}
-
-.listing:hover {
-   animation: fade-shadow 0.25s forwards;
-}
-
-.listingDescription {
-   height: 60px;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   font-size: 14px;
-   color: #666;
-}
-
-.CTAbutton:hover {
-   background-color: var(--DarkRed050); 
 }
 
 @keyframes fade-shadow {
@@ -74,7 +59,8 @@ body {
 .listing {
    display: flex;
    flex-direction: column;
-   width: 300px;
+   width: 300px;         
+   height: 400px;          
    border: 1px solid rgb(188, 188, 188);
    border-radius: 15px;
    box-shadow: 0 0 5px 0 rgb(188, 188, 188);
@@ -83,40 +69,55 @@ body {
    background-color: #fff;
 }
 
+.listing:hover {
+   animation: fade-shadow 0.25s forwards;
+}
+
 .listingImg {
    width: 100%;
-   height: 200px;
-   object-fit: cover;
+   height: 200px;        
+   object-fit: cover;       
+   object-position: center; 
 }
 
 .listingText {
-   padding: 10px;
-   flex: 1;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   padding: 10px;
+   flex-grow: 1;
+   overflow: hidden;
 }
 
 .listingTitle {
    font-size: 18px;
    font-weight: bold;
    color: var(--DarkGray);
+   margin-bottom: 5px;
+   line-height: 1.2;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
 }
 
 .listingDescription {
    font-size: 14px;
    color: #666;
    margin: 5px 0;
+   line-height: 1.2;
+   max-height: 3em; 
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .price {
    font-size: 16px;
    font-weight: bold;
    color: var(--DarkRed100);
+   margin: 5px 0;
 }
 
 .CTAbutton {
-   align-self: start;
    background-color: var(--DarkRed100);
    color: white;
    font-size: 14px;
@@ -124,4 +125,10 @@ body {
    border-radius: 5px;
    padding: 5px 10px;
    cursor: pointer;
+   align-self: start;
+   margin-top: auto; 
+}
+
+.CTAbutton:hover {
+   background-color: var(--DarkRed050);
 }
