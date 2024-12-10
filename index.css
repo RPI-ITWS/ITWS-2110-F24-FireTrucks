@@ -119,25 +119,19 @@ body {
 }
 
 .CTAbutton {
-   display: inline;
+   display: inline-block;
    background-color: var(--DarkRed100);
    color: white;
    font-size: 14px;
-   height: 28px;
-   float: right;
+   padding: 5px 10px;
    border: none;
    border-radius: 5px;
    margin-bottom: 10px;
+   cursor: pointer;
+   transition: background-color 0.2s ease; 
 }
 
 .CTAbutton:hover {
    background-color: var(--DarkRed050);
-   color: white;
-   font-size: 14px;
-   border: none;
-   border-radius: 5px;
-   padding: 5px 10px;
-   cursor: pointer;
-   align-self: start;
-   margin-top: auto; 
+
 }
