@@ -55,16 +55,11 @@ $stmtAuctions->bind_param("i", $userId);
 $stmtAuctions->execute();
 $auctions = $stmtAuctions->get_result();
 
-// Fetch giveaways for the user
+// Fetch giveaways hosted by the user
 $sqlGiveaways = "
-    SELECT gd.* 
-    FROM giveawayData gd
-    INNER JOIN giveawayEntreesData ge ON gd.giveaway_id = ge.giveaway_id
-    WHERE ge.name = (
-        SELECT first_name 
-        FROM users 
-        WHERE UserId = ?
-    )
+    SELECT * 
+    FROM giveawayData
+    WHERE userID = ?
 ";
 $stmtGiveaways = $conn->prepare($sqlGiveaways);
 $stmtGiveaways->bind_param("i", $userId);
