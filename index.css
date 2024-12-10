@@ -131,4 +131,12 @@ body {
 
 .CTAbutton:hover {
    background-color: var(--DarkRed050);
+   color: white;
+   font-size: 14px;
+   border: none;
+   border-radius: 5px;
+   padding: 5px 10px;
+   cursor: pointer;
+   align-self: start;
+   margin-top: auto; 
 }

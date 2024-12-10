@@ -122,4 +122,10 @@ h2 {
 
 .card .button-container button:hover {
     background-color: var(--DarkRed050);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
 }
