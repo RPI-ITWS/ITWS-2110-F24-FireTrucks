@@ -69,10 +69,6 @@ body {
    background-color: #fff;
 }
 
-.listing:hover {
-   animation: fade-shadow 0.25s forwards;
-}
-
 .listingImg {
    width: 100%;
    height: 200px;        
