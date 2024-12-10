@@ -1,119 +1,117 @@
-body{
+body {
    color: var(--DarkGray);
 }
 
-.input-group{
+.input-group {
    border: 1px black solid;
 }
 
-.listingSection{
+.listingSection {
    width: 1300px;
    margin: 0 auto;
 }
 
-.listingHeading{
+.listingHeading {
    display: flex;
    align-items: center;
    width: calc(100vw - 17px);
 }
 
-.listingSectionName{
+.listingSectionName {
    margin: 50px 0 0 10px;
    width: 1210px;
 }
 
-.viewAll{
+.viewAll {
    width: 61px;
    margin: 50px 10px 0 0;
    text-decoration: none;
    color: #878989;
 }
 
-.featuredListings{
-   width: 1300px;
-}
-
-.listing{
-   display: inline-block;
-   width: 300px;
-   border-color: rgb(188, 188, 188);
-   border-radius: 15px;
-   box-shadow: 0 0 5px 0 rgb(188, 188, 188);
-   margin: 10px;
-}
-
-.listing:hover{
-   box-shadow: 0 0 10px 0 rgb(125, 125, 125);
-}
-
-.listingText{
-   margin: 0 10px 0 10px;
-   height: 105px;
-}
-
-.listingImg{
-   width: 100%;
-   border-radius: 15px 15px 0 0;
-}
-
-.listingTitle{
-   margin-top: 10px;
-   margin-bottom: 5px;
-}
-
-.listingDescription{
-   margin-top: 0;
-}
-
-.price{
-   width: 61px;
-   margin: 4px 0 0 0;
-   display: inline-block;
-}
-
-.CTAbutton{
-   display: inline;
-   color: var(--DarkGray);
-   font-size: 14px;
-   height: 28px;
-   font-weight: bold;
-   float: right;
-   border: 1px solid rgb(188, 188, 188);
-   border-radius: 5px;
-}
-
-.CTAbutton:hover{
-   cursor: pointer;
-   background-color: rgb(184, 184, 184);
-}
-/* The following is kept seperate but added on just in case other pages may not like the styling added. */
 .featuredListings {
    display: flex;
    overflow-x: auto;
    gap: 20px;
-   padding-bottom: 10px;
+   padding-bottom: 10px; 
    scroll-snap-type: x mandatory;
-   width: auto !important;
+   width: auto !important; 
 }
 
 .listing {
-   flex: 0 0 auto;
+   display: inline-block;
+   width: 300px; 
+   height: auto; 
+   border: 1px solid rgb(188, 188, 188);
+   border-radius: 15px;
+   box-shadow: 0 0 5px 0 rgb(188, 188, 188);
+   margin: 10px 10px 20px 10px; 
    overflow: hidden;
-   box-sizing: border-box;
    scroll-snap-align: start;
+   box-sizing: border-box;
+}
+
+.listing:hover {
+   animation: fade-shadow 0.25s forwards; 
+}
+
+.listingImg {
+   width: 100%;
+   height: 300px;
+   object-fit: cover; 
+   border-radius: 15px 15px 0 0;
 }
 
 .listingText {
-   height: auto !important; 
-   overflow-wrap: break-word;
-   word-wrap: break-word;
-   white-space: normal;
+   margin: 10px;
+   height: auto;
    display: flex;
    flex-direction: column;
-   justify-content: flex-start;
+   justify-content: space-between;
 }
 
-.listingTitle, .listingDescription, .price {
-   overflow-wrap: break-word;
-   white-space: normal;
+.listingTitle {
+   margin-top: 10px;
+   margin-bottom: 5px;
+   font-size: 18px; 
+   font-weight: bold;
+}
+
+.listingDescription {
+   height: 60px;
+   margin-top: 0;
+   overflow: hidden; 
+   text-overflow: ellipsis; 
+}
+
+.price {
+   margin: 4px 0 0 0;
+   font-weight: bold;
+   color: var(--DarkGray);
+}
+
+.CTAbutton {
+   display: inline-block;
+   background-color: var(--DarkRed100); 
+   color: white;
+   font-size: 14px;
+   height: 28px;
+   border: none;
+   border-radius: 5px;
+   margin: 10px 0;
+   cursor: pointer;
+   text-align: center;
+}
+
+.CTAbutton:hover {
+   background-color: var(--DarkRed050);
+}
+
+@keyframes fade-shadow {
+   0% {
+      box-shadow: 0 0 5px 0 rgb(188, 188, 188);
+   }
+   100% {
+      box-shadow: 0 0 10px 0 rgb(125, 125, 125);
+   }
 }
