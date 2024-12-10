@@ -102,7 +102,7 @@ $conn->close();
             <div class="scrollable-row">
                 <?php foreach ($listings as $listing): ?>
                     <div class="card">
-                        <img src="<?php echo htmlspecialchars($listing['image_url']); ?>" class="cardImg">
+                        <img src="<?php echo htmlspecialchars($listing['image_url']); ?>" class="cardImg" alt="Listing Image">
                         <strong><?php echo htmlspecialchars($listing['Name']); ?></strong>
                         <p><?php echo htmlspecialchars($listing['Description']); ?></p>
                         <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this listing?');">
@@ -114,6 +114,7 @@ $conn->close();
                 <?php endforeach; ?>
             </div>
         </section>
+
 
         <section>
             <h2>Your Services</h2>
