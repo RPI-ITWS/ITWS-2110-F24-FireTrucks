@@ -16,8 +16,7 @@ function fetchAuctionDetails(auctionId) {
            document.querySelector('#auctionImage').src = data.image_url;
            document.querySelector('#itemTitle').textContent = data.title;
            document.querySelector('#itemDescription').textContent = data.description;
-           document.querySelector('.seller-name').textContent = "Hosted By: " + data.seller_name;
-           document.querySelector('.seller-email').textContent = data.seller_email;
+           document.querySelector('.seller-name').textContent = "Hosted By: " + data.seller_name + " - " + data.seller_email;
            if(data.time_left == 'Auction Over!') {
                document.querySelector('#winner-block').style.display = '';
            }
