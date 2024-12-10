@@ -134,6 +134,8 @@ if ($auction_result->num_rows > 0) {
         'title' => $auction['title'],
         'description' => $auction['description'],
         'image_url' => $auction['image_url'],
+        'seller_name' => $auction['host_name'],
+        'seller_email' => $auction['email'],
         'current_bid' => $highest_bid,  
         'time_left' => $time_left,
         'bidders' => $bidders,
